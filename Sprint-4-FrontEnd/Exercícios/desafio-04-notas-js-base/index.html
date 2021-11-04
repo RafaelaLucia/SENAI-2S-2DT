@@ -1,0 +1,47 @@
+A partir de dois campos de input para o usuário e um botão, ao clicar no botão,
+realizar o seguinte cálculo: "(notaum + notadois) / 2". Além disso, imprimir no console o
+valor da média que foi calculada.
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notas</title>
+</head>
+<body>
+
+    <h1>Cálculo de notas (média aritmética)</h1>
+
+    <form id="formnotas">
+        <input type="number" required name="notaum" id="notaum">
+        <input type="number" name="notadois" id="notadois" required>
+        <button type="submit" class="btn">Calcular</button>
+    </form>
+
+    <script>
+    //pegando elemento 'notaum' através do GetElementByID
+    let notaum = document.getElementById('notaum');
+    console.log('notaum');
+
+    //pegando elemento 'notadois' através do querySelector
+    //pegar pelo id usamos a #, exemplo: #NomeDoIdDoElemento
+    let notadois = document.querySelector('#notadois');
+    console.log('notadois');
+
+    //pegando elemento btncalcular através do querySelector
+    //pegar pela class usamos . exemplo: .NomeDaClass
+    let btnCalcular = document.querySelector('.btn');
+
+    //inserindo interatividade no botão calcular
+    //ideia de function e metodo é a mesma
+    btnCalcular.addEventListener("click", function(event){
+        //esse event é para modificar o submit, "previnir que aconteça", no caso, o refresh da página
+        event.preventDefault();
+        //converte a string pra float e mostra o resultado da equação
+        console.log((parseInt(notaum.value) + parseInt(notadois.value)) / 2);     
+    })
+    </script>
+</body>
+</html>

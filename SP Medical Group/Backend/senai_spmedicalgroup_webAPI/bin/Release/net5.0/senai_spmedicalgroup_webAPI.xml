@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_spmedicalgroup_webAPI</name>
+    </assembly>
+    <members>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IMedicoRepository.ListarTodos">
+            <summary>
+            Listar todos os médicos cadastrados na clínica
+            </summary>
+            <returns>Uma lista com os dados de todos os médicos cadastrados</returns>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IMedicoRepository.Cadastrar(senai_spmedicalgroup_webAPI.Domains.Medico)">
+            <summary>
+            Cadastra um novo médico no sistema
+            </summary>
+            <param name="novoMedico">Objeto com os dados necessários para realização do cadastro</param>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IMedicoRepository.Atualizar(System.Int32,senai_spmedicalgroup_webAPI.Domains.Medico)">
+            <summary>
+            Atualizar os dados de um médico já cadastrado
+            </summary>
+            <param name="idMedico">Id do médico que será cadastrado</param>
+            <param name="medicoAtualizado">Objeto com os novos dados para serema atualizados</param>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IMedicoRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar os dados de um médico cadastrado no sistema
+            </summary>
+            <param name="idMedico">Id do médico que terá seus dados deletados</param> 
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IMedicoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Listar todos os dados de um determinado médico
+            </summary>
+            <param name="idMedico">Id do médico que será buscado</param>
+            <returns>Uma lista com os dados do médico buscado</returns>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IPacienteRepository.ListarTodos">
+            <summary>
+            Lista todos os pacientes cadastrados na clínica
+            </summary>
+            <returns>Uma lista com os dados dos pacientes</returns>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IPacienteRepository.Cadastrar(senai_spmedicalgroup_webAPI.Domains.Paciente)">
+            <summary>
+            Cadastra um novo paciente 
+            </summary>
+            <param name="novoPaciente">Objeto com os dados necessários para o novo cadastro</param>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IPacienteRepository.Atualizar(System.Int32,senai_spmedicalgroup_webAPI.Domains.Paciente)">
+            <summary>
+            Atualizar os dados de um paciente já cadastrado no sistema
+            </summary>
+            <param name="idPaciente">Id do paciente que terá seus dados atualizados</param>
+            <param name="pacienteAtualizado">Objeto com os novos dados</param>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IPacienteRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar os dados de um paciente do sistema
+            </summary>
+            <param name="idPaciente">Id do paciente que terá seus dados deletados</param>
+        </member>
+        <member name="M:senai_spmedicalgroup_webAPI.Interfaces.IPacienteRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Buscar os dados de um paciente em específico
+            </summary>
+            <param name="id">Id do paciente desejado</param>
+            <returns>Uma lista com os dados daquele determinado paciente</returns>
+        </member>
+    </members>
+</doc>

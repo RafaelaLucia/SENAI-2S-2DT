@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_movies_webapi</name>
+    </assembly>
+    <members>
+        <member name="M:senai_movies_webapi.Controllers.GenerosController.Post(senai_movies_webapi.Domains.GeneroDomain)">
+            <summary>
+            Cadastra novo genero
+            </summary>
+        </member>
+        <member name="M:senai_movies_webapi.Controllers.GenerosController.Delete(System.Int32)">
+            <summary>
+            deleta um genero existente, recebendo como parametro o id do genero que será deletado
+            </summary>
+        </member>
+        <member name="T:senai_movies_webapi.Domains.FilmeDomain">
+            <summary>
+            Classe representa a entidade filme
+            </summary>
+        </member>
+        <member name="T:senai_movies_webapi.Domains.GeneroDomain">
+            <summary>
+            Classe representa a entidade genero
+            </summary>
+        </member>
+        <member name="T:senai_movies_webapi.Interfaces.IGeneroRepository">
+            <summary>
+            interface responsável pelo repositório GeneroRepository
+            </summary>
+        </member>
+        <member name="M:senai_movies_webapi.Interfaces.IGeneroRepository.ListarTodos">
+            <summary>
+            Listar todos os gêneros
+            </summary>
+            <returns>Uma lista de gêneros</returns>
+        </member>
+        <member name="M:senai_movies_webapi.Interfaces.IGeneroRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um gênero através de seu ID
+            </summary>
+            <param name="idGenero">id do gênero que será buscado</param>
+            <returns>Um gênero buscado</returns>
+        </member>
+        <member name="M:senai_movies_webapi.Interfaces.IGeneroRepository.Cadastrar(senai_movies_webapi.Domains.GeneroDomain)">
+            <summary>
+            Cadastra um novo gênero
+            </summary>
+            <param name="novoGenero">Objeto novoGenero com os novos dados</param>
+        </member>
+        <member name="M:senai_movies_webapi.Interfaces.IGeneroRepository.AtualizarIdCorpo(senai_movies_webapi.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um gênero existente
+            </summary>
+            <param name="generoAtualizado">Objeto generoAtualizado com novos dados atualizados</param>
+        </member>
+        <member name="M:senai_movies_webapi.Interfaces.IGeneroRepository.AtualizarIdUrl(System.Int32,senai_movies_webapi.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um gênero existente
+            </summary>
+            <param name="idGenero">id do gênero que será atualizado</param>
+            <param name="generoAtualizado"> Objeto generoAtualizado com novos dados atualizados</param>
+        </member>
+        <member name="M:senai_movies_webapi.Interfaces.IGeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um gênero existente
+            </summary>
+            <param name="idGenero">id do gênero que será deletado</param>
+        </member>
+        <member name="F:senai_movies_webapi.Repositories.GeneroRepository.stringConexao">
+            <summary>
+            Uma classe responsável pelo repositório dos gêneros
+            String de conexão com o banco de dados que recebe os parâmetros
+            initial catalog = Nome do banco de dados
+            user ID = sa; pwd = Senai@132 = Faz autenticação com o SQL Server passando o login e senha
+            Integrated security=true = faz autenticação com o usuario do sistema windows
+            Data Source = nome do Servidor
+            </summary>
+        </member>
+        <member name="M:senai_movies_webapi.Repositories.GeneroRepository.Cadastrar(senai_movies_webapi.Domains.GeneroDomain)">
+            cadastra um novo gênero
+        </member>
+        <member name="M:senai_movies_webapi.Repositories.GeneroRepository.ListarTodos">
+            <summary>
+            Lista todos os gêneros 
+            </summary>
+            <returns>uma lista de gêneros</returns>
+        </member>
+    </members>
+</doc>
