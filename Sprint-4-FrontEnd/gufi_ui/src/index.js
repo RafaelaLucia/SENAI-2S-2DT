@@ -8,6 +8,7 @@ import Home from './pages/home/App';
 import TiposEventos from './pages/tiposEventos/TiposEventos';
 import NotFound from './pages/notFound/NotFound';
 import Login from './pages/login/login.js';
+import Eventos from './pages/eventos/eventos';
 //Report
 import reportWebVitals from './reportWebVitals';
 import { parseJwt, usuarioAutenticado } from './services/auth';
@@ -30,6 +31,7 @@ const routing = (
         <Route exact path="/" component={Home} />
         <Route path="/tiposEventos" component={TiposEventos} />
         <Route path="/login" component={Login} />
+        <Route path="/eventos" component={Eventos} /> {/* Eventos */}
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>
