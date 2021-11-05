@@ -5,6 +5,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rambla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
 
 .logo-img{
@@ -123,22 +124,73 @@
 .footer{
     height: 295px;
     background-color: #0E3961;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.login-section{
+.footer_nav{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-section input{
+    display: flex;
+    margin-top: 22px;
+    width: 497px;
+    height: 59px;
+    border-radius: 28px;
+    background-color: #B2D3F2;
+    color: #65A7E6;
+    font-size: 20px;
+    align-items: flex-start;
 }
 
 .login-btn{
-    background-color: #B2D3F2;
+    background-color: #0E3961;
+    color: #B2D3F2;
+    width: 229px;
+    height: 55px;
+    font-size: 36px;
+    font-weight: 300;
 }
 
 #inp-login{
-    background-color: #B2D3F2;
-    border-radius: 10px;
-    color: #65A7E6;
     text-decoration: none;
     display: flex;
     align-items: center;
+}
+
+.btn_clinics{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.img_login{
+    
+}
+
+.login_block{
+    width: 844px;
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_block h1{
+    font-family: 'Rambla', sans-serif;
+    font-size: 48px;
+    color: #6F6F6F;
+    font-weight: 100;
+
 }
