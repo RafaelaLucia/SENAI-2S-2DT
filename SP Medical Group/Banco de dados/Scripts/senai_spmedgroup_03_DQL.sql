@@ -40,15 +40,17 @@ select COUNT (idEspecialidades) AS EspecialidadeQ from Medico
 select sum(idMedico) contagemMedicos from Medico
 go
 
-select count(idMedico) QuantidadeM from Medico
+/*select count(idMedico) QuantidadeM from Medico
 
 select idEspecialidades, count(idMedico), QuantidadeM from Medico group by idEspecialidades
 having idEspecialidades = 8
 go
 
+
 select idEspecialidades, count(idMedico), Especialidade from Medico group by idEspecialidades
 having idEspecialidades = 17
 go
+*/
 
 select * FROM usuario
 inner join paciente on paciente.idUsuario = usuario.idUsuario

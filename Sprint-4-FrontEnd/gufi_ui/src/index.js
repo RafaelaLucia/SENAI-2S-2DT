@@ -7,9 +7,9 @@ import './index.css';
 import Home from './pages/home/App';
 import TiposEventos from './pages/tiposEventos/TiposEventos';
 import NotFound from './pages/notFound/NotFound';
-import Login from './pages/login/login.js';
+import Login from './pages/login/login.jsx';
 import Eventos from './pages/eventos/eventos';
-import TiposUsuarios from './pages/tiposUsuarios/tiposUsuarios';
+import TiposUsuarios from './pages/TipoUsuarios/tiposUsuarios';
 //Report
 import reportWebVitals from './reportWebVitals';
 import { parseJwt, usuarioAutenticado } from './services/auth';

@@ -14,7 +14,8 @@ import home from '../../pages/home/App'
             <a onClick={home}>Home</a>
             <NavLink to="/tiposEventos"><a>Eventos</a></NavLink>
             <a>Contato</a>
-            <a className="cabecalhoPrincipal-nav-login" href="login.html">Login</a>
+            <NavLink to="/login"><a className="cabecalhoPrincipal-nav-login" >Login</a></NavLink>
+            
           </nav>
         </div>
       </header>

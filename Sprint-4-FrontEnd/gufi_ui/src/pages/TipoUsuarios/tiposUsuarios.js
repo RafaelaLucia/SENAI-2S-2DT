@@ -1,39 +1,39 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { func } from 'prop-types';
 
 export default function TiposUsuarios(){
-    //Estrutura de declaração de estado usando o Hook UseState
-    //Const = [nomeDoState, funçãoAtualiza] = useState(valorInicial);
-   const [ listaTiposUsuarios, setListaTiposUsuarios ] = useState([]);
-   const [ titulo, setTitulo ] = useState('');
-   const [ isLoading, setIsLoading ] = useState(false);
+     // estrutura de declaração de um estado usando o Hook useState
+    // const [ nomeEstado, funcaoAtualiza ] = useState( valorInicial )
+    const [ listaTiposUsuarios, setListaTiposUsuarios ] = useState( [] );
+    const [ titulo, setTitulo ] = useState( '' );
+    const [ isLoading, setIsLoading ] = useState( false );
 
-   //Função responsável por fazer a requisição e trazer a lista de tipos de usuários
-   function buscarTiposUsuarios(){
-        console.log('fazer a chamada para a API');
-        //Fazer a chamada para a API usando o axios
+    // função responsável por fazer a requisição e trazer a lista de tipos usuários
+    function buscarTiposUsuarios(){
+        console.log('Agora vamos fazer a chamada para a API.')
+
+        // faz a chamada para a API usando axios
         axios('http://localhost:5000/api/tiposusuarios', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
-        }).then(r => {
-            //Caso a resposta da requisição tenha um status code igual a 200 (OK)
-            if(r.status === 200){
-                //Atualiza o estado listaTiposUsuarios com os dados do corpo da resposta
-                setListaTiposUsuarios(r.data)
+        })
+        .then(resposta => {
+            // console.log(resposta)
+            if (resposta.status === 200) {
+                // estrutura set...
+                // setListaTiposUsuarios( novoValor )
+                setListaTiposUsuarios( resposta.data )
             }
-        }).catch(
-            //Caso ocorra algum erro, exibir no console do navegador com este erro
-            er => console.log(er)
-        );
-         
-        /*Estrutura do Hooke useEffect: 
-          useEffect (efeito, causa)
-          useEffect({o que vai ser feito}, {o que será escutado})
-          desta forma,
-        */
-        useEffect(buscarTiposUsuarios,[]);
+        })
+        .catch( erro => console.log(erro) );
+    };
+
+    // estrutura de declaração do Hook useEffect
+    // useEffect( efeito, causa );
+    // useEffect( { o que vai ser feito }, { o que será escutado } );
+    // dessa forma, a função buscarTipoUsuarios será invocada apenas uma vez pelo useEffect
+    useEffect( buscarTiposUsuarios, [] );
 
         //Função responsável por fazer a requisição que cadastra um novo tipo de usuário
         function cadastrarTipoUsuario(evento){
@@ -138,4 +138,3 @@ export default function TiposUsuarios(){
     )
 }
 
-};

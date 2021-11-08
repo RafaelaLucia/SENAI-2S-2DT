@@ -73,7 +73,8 @@ create table Consulta (
  idSituacao tinyint foreign key references Situacao (idSituacao),
  idMedico int foreign key references Medico (idMedico),
  idPaciente int foreign key references Paciente (idPaciente),
- dataConsulta datetime not null
+ dataConsulta datetime not null,
+ descricao varchar(300)
 );
 go
 drop table consulta
