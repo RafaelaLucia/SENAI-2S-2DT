@@ -146,6 +146,7 @@
     color: #65A7E6;
     font-size: 20px;
     align-items: flex-start;
+    --border: #B2D3F2;
 }
 
 .login-btn{
@@ -155,12 +156,7 @@
     height: 55px;
     font-size: 36px;
     font-weight: 300;
-}
-
-#inp-login{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+    border-style: none;
 }
 
 .btn_clinics{
@@ -172,10 +168,6 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-
-.img_login{
-    
 }
 
 .login_block{
@@ -193,4 +185,34 @@
     color: #6F6F6F;
     font-weight: 100;
 
+}
+
+.img-block{
+    background-image: url("../img/login_img.png");
+    display: flex;
+    width: 45vw;
+    height: 663px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: 1180px;
+    position: absolute;
+}
+
+.block-ad{
+    width: 44vw;
+    background-color: aquamarine;
+    margin-right: 133px;
+    height: 42vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-ad h1{
+    margin-bottom: 125px;
+}
+
+.login_register{
+    font-family: 'Sansation Regular', arial;
 }
