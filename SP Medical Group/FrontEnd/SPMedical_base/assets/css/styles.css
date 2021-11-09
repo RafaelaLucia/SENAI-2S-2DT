@@ -143,7 +143,6 @@
     height: 59px;
     border-radius: 28px;
     background-color: #B2D3F2;
-    color: #65A7E6;
     font-size: 20px;
     align-items: flex-start;
     --border: #B2D3F2;
@@ -222,10 +221,12 @@
 
 .login_register{
     font-family: 'Sansation Regular', arial;
+    margin-top: 48px;
 }
 
 .inp-login{
     border-color: #B2D3F2;
+
 }
 
 .sec_consulta{
@@ -283,6 +284,127 @@
     flex-direction: column;
     justify-content: space-between;
 
+}
+
+.conteudo-consulta{
+    background-color: rgb(184, 17, 95);
+    width: 101vw;
+}
+
+.section-consulta-informacao{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin-left: 50vw;
+}
+
+.login-section a{
+    text-decoration: none;
+    font-family: 'Sansation Regular', arial;
+    font-size: 20px;
+    font-weight: normal;
+    color: #969CA1;
+    display: flex;
+    justify-content: center;
+}
+
+.login-section a:hover{
+    color: rgb(24, 123, 236);
+}
+
+.login_register a{
+    text-decoration: none;
+    font-family: 'Sansation Regular', arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1C3146;
+}
+
+.login_register a:hover{
+    color: rgb(134, 128, 128);
+}
+
+.login_register span{
+    font-family: 'Sansation Regular', arial;
+    font-size: 20px;
+    font-weight: normal;
+    color: #1C3146;
+}
+
+
+
+.footer_link{
+    /* background-color: brown; */
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* margin-right: 337px; */
+    font-family: 'Sansation Regular', arial;
+    font-size: 20px;
+    width: 708px;
+
+}
+
+.footer_termo{
+    /* background-color: rgb(78, 255, 78); */
+    width: 689px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Sansation Regular', arial;
+    margin-top: 178px;
+    height: 93px;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.footer-comunicacao{
+    /* background-color: cyan; */
+    width: 240px;
+    /* justify-content: center; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 137pxs;
+    flex-direction: column;
+    font-family: 'Sansation Regular', arial;
+    font-size: 20px;
+    margin-left: 331px;
+}
+
+#p_termo{
+    font-style: italic;
+    font-weight: normal;
+}
+
+.footer-comunicacao-img{
+    /* background-color: tomato; */
+   display: flex;
+   height: 100px;
+   flex-direction: unset;
+}
+
+.footer-comunicacao img{
+    width: 66px;
+    height: 66px;
+}
+
+#face{
+
+}
+
+.login-block-button{
+    /* background-color: tomato; */
+    /* width: 258
+px
+; */
+    height: 441px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 @media(max-width:1519px){

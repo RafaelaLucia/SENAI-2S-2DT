@@ -8,7 +8,7 @@ import Home from './pages/home/App';
 import TiposEventos from './pages/tiposEventos/TiposEventos';
 import NotFound from './pages/notFound/NotFound';
 import Login from './pages/login/login.jsx';
-import Eventos from './pages/eventos/eventos';
+import eventosAdm from './pages/EventosAdm/eventosAdm';
 import TiposUsuarios from './pages/TipoUsuarios/tiposUsuarios';
 //Report
 import reportWebVitals from './reportWebVitals';
@@ -33,7 +33,7 @@ const routing = (
         <PermissaoAdm path="/tiposEventos" component={TiposEventos} /> {/* Tipos Eventos */}
         <PermissaoAdm path="/tiposUsuarios" component={TiposUsuarios} /> {/* Tipos Usuários */}
         <Route path="/login" component={Login} />
-        <Route path="/eventos" component={Eventos} /> {/* Eventos */}
+        <Route path="/eventosAdm" component={EventosAdm} /> {/* Eventos */}
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>
