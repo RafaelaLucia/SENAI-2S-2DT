@@ -162,6 +162,12 @@
     border-style: none;
 }
 
+.login-btn:hover{
+    cursor: pointer;
+    background-color: #304b64;
+    color: rgb(218, 218, 218);
+}
+
 .btn_clinics{
   background-color: #4CAF50; /* Green */
   border: none;
@@ -403,7 +409,7 @@
     /* width: 258
 px
 ; */
-    height: 441px;
+height: 142px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -411,7 +417,7 @@ px
 }
 
 .img-block-cadastro{
-    background-image: url("../img/image\ 22.png");
+    background-image: url("../img/bannerM.png");
     display: flex;
     /*width: 45vw;
     height: 663px;
@@ -423,6 +429,25 @@ px
     width: 44vw;
     height: 768px;
     margin-left: 1519px;
+}
+
+.n-encontrado-main{
+    background-color: #668ed6;
+    width: 653px;
+    height: 346px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 447px;
+    margin-top: 189px;
+    font-family: arial;
+}
+
+#erroM-stilo{
+    color: red;
+    margin-left: 110px;
+    font-size: 24px;
+    font-family: arial;
 }
 
 @media(max-width:1519px){
