@@ -100,8 +100,8 @@ export default class eventosAdm extends Component {
       nomeEvento: this.state.titulo,
       descricao: this.state.descricao,
       dataEvento: new Date(this.state.dataEvento),
-      acessoLivre: parseInt(this.state.acessoLivre),
-      idTipoEvento: this.state.idTipoEvento,
+        acessoLivre: parseInt(this.state.acessoLivre),
+        idTipoEvento: this.state.idTipoEvento,
       idInstituicao: this.state.idInstituicao,
     };
 

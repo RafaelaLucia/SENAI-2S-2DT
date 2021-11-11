@@ -7,20 +7,21 @@ import { Route, BrowserRouter as Router, Redirect ,Switch } from 'react-router-d
 import Home from './pages/home/App';
 import Login from './pages/login/login';
 import NotFound from './pages/notFound/notFound';
+import CadastroC from './pages/CadastrarConsulta/cadastrarConsulta'
 //Report
 import reportWebVitals from './reportWebVitals';
-import { parseJwt, usuarioAutenticado } from './services/auth';
+import { parseJwt, usuarioLogado } from './services/auth';
 
-// const PermissaoAdm = ({ component : Component }) => (
-//   <Route
-//     render = { props => 
-//       usuarioAutenticado() && parseJwt().role === '1' ?
-//       // operador spread
-//       <Component {...props} /> :
-//       <Redirect to='login' />
-//     }
-//   />
-// )
+const PermissaoAdm = ({ component : Component }) => (
+  <Route
+    render = { props => 
+      usuarioLogado() && parseJwt().role === '1' ?
+      // operador spread
+      <Component {...props} /> :
+      <Redirect to='login' />
+    }
+  />
+)
 
 
 const routing = (
@@ -29,6 +30,7 @@ const routing = (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <PermissaoAdm path="/CadastroConsulta" component={CadastroC} />
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>

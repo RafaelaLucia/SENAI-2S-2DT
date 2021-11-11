@@ -425,6 +425,27 @@ px
     margin-left: 1519px;
 }
 
+.main_consultaC{
+    background-image: url(../img/teste.png);
+    width: 98.9vw;
+    height: 880px;
+    background-color: #0E3961; 
+    overflow: hidden;
+}
+
+.conteudo_consultaC{
+    position: absolute;
+    height: 769px;
+    width: 1024px;
+    opacity: 90%;
+    background-color: #C4C4C4;
+}
+
+.section_cadastroC{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media(max-width:1519px){
    .img-block{
     height: 768px;

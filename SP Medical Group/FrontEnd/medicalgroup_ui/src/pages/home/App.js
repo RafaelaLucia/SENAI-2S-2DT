@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // import img from '../../assets/img'
 
 import Header from "../../components/header/header";
@@ -15,8 +15,10 @@ function App() {
         </div>
         <div class="section-block">
             <div class="block" id="block_itself">
+                <NavLink to="/CadastroConsulta">
                 <img src="./assets/img/calendar.png" alt=""/>
                 <span>Agendar Consultas</span>
+                </NavLink>
             </div>
             <div class="block" id="block_itself">
                 <img src="./assets/img/search.png" alt=""/>

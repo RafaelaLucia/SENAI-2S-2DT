@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import axios from 'axios';
 import { parseJwt, usuarioLogado } from '../../services/auth';
-import { Link, NavLink, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 
@@ -12,30 +12,30 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            senha: '',
+            email: 'clinicaPossarleADM',
+            senha: 'adm123',
             erroM: '',
             isLoading: false
         };
     };
 
-    Logar = (item) => {
-       item.preventDefault();
+    Logar = (event) => {
+       event.preventDefault();
        this.setState({erroM: '', isLoading: true});
-       axios.post('http://localhost;5000/api/Login',{
+       axios.post('http://localhost:5000/api/Login',{
            email: this.state.email,
            senha: this.state.senha
        })
 
-       .then(r => {
-           if(r.status === 200){
-               localStorage.setItem('usuario-login', r.data.token);
+       .then(answ => {
+           if(answ.status === 200){
+               localStorage.setItem('usuario-login', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaW5pY2FQb3NzYXJsZUFETSIsImp0aSI6IjExIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTYzNjY2MjI4NywiaXNzIjoic3BtZWRpY2FsZ3JvdXAud2ViQVBJIiwiYXVkIjoic3BtZWRpY2FsZ3JvdXAud2ViQVBJIn0.T725SPX2gwvkSeCRi5VXFfdeS20Y8waA8SL_CD1kOlU');
                this.setState({isLoading: false});
                let base64 = localStorage.getItem('usuario-login').split('.')[1];
                console.log(base64);
                console.log(this.props);
                if(parseJwt().role === '1'){
-                   this.props.history.push('/');
+                   this.props.history.push('/CadastroConsulta');
                    console.log('tá logando' + usuarioLogado())
                }else{
                    this.props.history.push('/')
