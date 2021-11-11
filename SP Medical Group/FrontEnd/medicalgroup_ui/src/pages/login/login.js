@@ -29,13 +29,13 @@ export default class Login extends Component {
 
        .then(answ => {
            if(answ.status === 200){
-               localStorage.setItem('usuario-login', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaW5pY2FQb3NzYXJsZUFETSIsImp0aSI6IjExIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTYzNjY2MjI4NywiaXNzIjoic3BtZWRpY2FsZ3JvdXAud2ViQVBJIiwiYXVkIjoic3BtZWRpY2FsZ3JvdXAud2ViQVBJIn0.T725SPX2gwvkSeCRi5VXFfdeS20Y8waA8SL_CD1kOlU');
+               localStorage.setItem('usuario-login', '');
                this.setState({isLoading: false});
                let base64 = localStorage.getItem('usuario-login').split('.')[1];
                console.log(base64);
                console.log(this.props);
                if(parseJwt().role === '1'){
-                   this.props.history.push('/CadastroConsulta');
+                   this.props.history.push('/');
                    console.log('tá logando' + usuarioLogado())
                }else{
                    this.props.history.push('/')

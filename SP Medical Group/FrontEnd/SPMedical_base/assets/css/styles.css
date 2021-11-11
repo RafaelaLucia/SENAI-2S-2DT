@@ -446,6 +446,27 @@ px
   align-items: center;
   justify-content: center;
 }
+
+.block_inputC{
+    display: flex;
+    flex-direction: column;
+    width: 497px;
+    height: 55px;
+}
+
+.conteudo_consultaC h1{
+    color: #6C6C6C;
+    font-family: arial;
+}
+
+.block_inputC input{
+    background-color: #B2D3F2;
+    border: 2px solid #B2D3F2;
+    border-radius: 28px;
+    font-size: 20px;
+    height: 55px;
+}
+
 @media(max-width:1519px){
    .img-block{
     height: 768px;
