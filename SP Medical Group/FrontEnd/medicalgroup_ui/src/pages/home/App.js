@@ -3,6 +3,10 @@ import { Link, NavLink } from 'react-router-dom';
 
 import Header from "../../components/header/header";
 import Footer from '../../components/footer/footer'
+import icon1 from '../../assets/img/calendar.png'
+import icon2 from '../../assets/img/search.png'
+import icon3 from '../../assets/img/doctor.png'
+import clinica from '../../assets/img/Clinica.png'
 
 function App() {
   return (
@@ -16,16 +20,16 @@ function App() {
         <div class="section-block">
             <div class="block" id="block_itself">
                 <NavLink to="/CadastroConsulta">
-                <img src="./assets/img/calendar.png" alt=""/>
+                <img src={icon1} alt=""/>
                 <span>Agendar Consultas</span>
                 </NavLink>
             </div>
             <div class="block" id="block_itself">
-                <img src="./assets/img/search.png" alt=""/>
+                <img src={icon2} alt=""/>
                 <span>Listar Consultas</span>
             </div>
             <div class="block" id="block_itself">
-                <img src="./assets/img/doctor.png" alt=""/>
+                <img src={icon3} alt=""/>
                 <span>Encontre um Médico</span>
             </div>
         </div>
@@ -33,9 +37,9 @@ function App() {
     <section class="clinics">
         <h2>Unidades SP Medical Group</h2>
         <div class="clinics-img">
-            <img src="../../assets/img/Clinica.png" alt=""/>
-            <img src="./assets/img/Clinica.png" alt=""/>
-            <img src="./assets/img/Clinica.png" alt=""/>
+            <img src={clinica} alt=""/>
+            <img src={clinica} alt=""/>
+            <img src={clinica} alt=""/>
         </div>
             <button id="btn_clinics">Ver mais unidades</button>
     </section>

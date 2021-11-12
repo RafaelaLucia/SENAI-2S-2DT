@@ -295,11 +295,16 @@
 }
 
 .section-consulta-informacao{
-    background-color: blue;
-    width: 100px;
-    height: 100px;
-    margin-left: 50vw;
-}
+        background-color: blue;
+        width: 50vw;
+        height: 38vw;
+        margin-left: 37vw;
+        position: absolute;
+        /* margin-bottom: 203
+    px
+    ; */
+        margin-top: -178px;
+    }
 
 .login-section a{
     text-decoration: none;

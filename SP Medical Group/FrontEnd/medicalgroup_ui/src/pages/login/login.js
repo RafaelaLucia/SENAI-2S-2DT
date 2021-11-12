@@ -1,19 +1,21 @@
 import { Component } from 'react';
 import axios from 'axios';
 import { parseJwt, usuarioLogado } from '../../services/auth';
-import { Link } from 'react-router-dom';
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 
 import '../../assets/css/style.css';
+import { Redirect } from 'react-router-dom';
 
 
 export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: 'clinicaPossarleADM',
-            senha: 'adm123',
+            // email: 'clinicaPossarleADM',
+            // senha: 'adm123',
+            email: '',
+            senha: '',
             erroM: '',
             isLoading: false
         };
@@ -29,15 +31,25 @@ export default class Login extends Component {
 
        .then(answ => {
            if(answ.status === 200){
-               localStorage.setItem('usuario-login', '');
+            //    debugger
+               console.log('Meu token é: ' + answ.data.tokenGerado);
+               localStorage.setItem('usuario-login', answ.data.tokenGerado);
                this.setState({isLoading: false});
+            //    debugger;
+            //    this.props.history.push("/")
                let base64 = localStorage.getItem('usuario-login').split('.')[1];
                console.log(base64);
                console.log(this.props);
                if(parseJwt().role === '1'){
-                   this.props.history.push('/');
+                   console.log('a')
+                   this.props.history.push('/CadastroConsulta');
                    console.log('tá logando' + usuarioLogado())
-               }else{
+               }else if(parseJwt().role === '3'){
+                console.log('ab')
+                this.props.history.push('/listarMeus');
+                console.log('tá logando' + usuarioLogado())
+               }else if(parseJwt().role === '2'){
+                console.log('abc')
                    this.props.history.push('/')
                }
            }
