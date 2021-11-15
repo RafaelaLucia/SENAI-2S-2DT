@@ -32,7 +32,8 @@ export default function ListarMeus(){
         <div class="sec_consulta">
             <img src="./assets/img/und_med.png" alt=""/>
             <div class="sec_consulta_font">
-                <h1>Você tem 2 consultas agendadas</h1>
+                <h1>{'Você tem' + ListarMinhasConsultas[buscarMinhasConsultas.length-1] + 'consultas agendadas'}</h1>
+                {/* console.log(ListaAlunos[ListaAlunos.length-1]); */}
                 <p>Total de consultas : 3</p>
             </div>
         </div>
