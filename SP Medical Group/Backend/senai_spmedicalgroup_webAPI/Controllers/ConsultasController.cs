@@ -96,7 +96,6 @@ namespace senai_spmedicalgroup_webAPI.Controllers
                 }
             }
 
-        [Authorize]
         [HttpGet]
         public IActionResult ListarConsultas()
         {
@@ -110,7 +109,6 @@ namespace senai_spmedicalgroup_webAPI.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
         [HttpPost("Cadastrar")]
         public IActionResult Cadastrar(Consultum inscricao)
         {

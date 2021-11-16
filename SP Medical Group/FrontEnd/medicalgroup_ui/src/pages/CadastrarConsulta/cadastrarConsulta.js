@@ -11,13 +11,15 @@ export default class cadastrarConsulta extends Component {
     this.state = {
       descricao: '',
       dataConsulta: new Date(), // inicialmente vai ser do tipo date, inicia com a data e hora atual.
-      Situacao: '', //com o navegador nao podemos mandar boolean diretamente, entao quando mandamos 0 ou 1 o C# entende automaticamente.
-      idUsuario: 0,
+      idSituacao: '', //com o navegador nao podemos mandar boolean diretamente, entao quando mandamos 0 ou 1 o C# entende automaticamente.
+      idPaciente: 0,
       idMedico: 0,
+      cadastrou: false,
 
       listaConsultas: [], //listaEventos
       listaUsuarios: [], //tipoeventos
       listaMedicos: [], //instituicao
+      listaSituacoes: [],
       isLoading: false,
 
     };
@@ -58,6 +60,16 @@ export default class cadastrarConsulta extends Component {
        }).catch((error) => console.log(error));
    }
 
+  
+   buscarSituacao = () => {
+    axios('http://localhost:5000/api/Situacoes').then((r) => {
+        if(r.status === 200){
+            this.setState({listaSituacoes: r.data});
+            console.log(this.state.listaSituacoes);
+        }
+    }).catch((error) => console.log(error));
+}
+
    atualizarEstado = (item) => {
        this.setState({[item.target.name] : item.target.value});
    };
@@ -72,8 +84,10 @@ export default class cadastrarConsulta extends Component {
    cadastrarConsulta = (item) => {
        item.preventDefault();
        this.setState({isLoading: true});
+
+
        let consulta = {
-           idPaciente: this.state.idUsuario,
+           idPaciente: this.state.idPaciente,
            idMedico: this.state.idMedico,
            Situacao: parseInt(this.state.idSituacao),
            descricao: this.state.descricao,
@@ -89,6 +103,7 @@ export default class cadastrarConsulta extends Component {
                this.setState({isLoading: false});
            }
        }).catch((error) => {
+           console.log("deu ruim")
            console.log(error);
            this.setState({isLoading: false});
         }).then(this.buscarConsultas);
@@ -101,63 +116,95 @@ export default class cadastrarConsulta extends Component {
 
         <section className="section_cadastroC">
         <div className="conteudo_consultaC">
-            <form>
-            <h1>Cadastro de Consulta</h1>
-            <input 
-            required
-            name='idUsuario'
-            value={this.state.idUsuario}
-            onChange={this.atualizarEstado}
-            type="text" 
-            placeholder="CPF do paciente"
-            />
+        <h1>Cadastro de Consulta</h1>
+        <form className="formu-cadastro" onSubmit={this.cadastrarConsulta}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '20vw',
+                }}
+              >
+                 <select
+                   className="cadastro_input"
+                  name="idPaciente"
+                  value={this.state.idPaciente}
+                  onChange={this.atualizarEstado}
+                >
+                  <option value="0">Selecione o Paciente</option>
 
-            <input 
-            required
-            type="text" 
-            placeholder="CRM do Médico(a)"
-            name="idMedico"
-            value={this.state.idMedico}
-            onChange={this.atualizarEstado}
-        />
+                  {this.state.listaUsuarios.map((tema) => {
+                    return (
+                      <option key={tema.idPaciente} value={tema.idPaciente}>
+                        {tema.nomePaciente}
+                      </option>
+                    );
+                  })}
+                </select>
 
-        <select 
-        name="Situacao"
-        value={this.state.Situacao}
-        onChange={this.atualizarEstado}
-        >
-        <option value="">Selecione a Situacao</option>
-        <option value="1">Livre</option>
-        <option value="0">Restrito</option>
-        </select>
+                <select
+                  className="cadastro_input"
+                  name="idMedico"
+                  value={this.state.idMedico}
+                  onChange={this.atualizarEstado}
+                >
+                  <option value="0">Selecione o Médico</option>
 
-        <input 
-        required
-        type="text"
-        name="descricao"
-        value={this.state.descricao}
-        onChange={this.atualizarEstado}
-        placeholder="Descrição da Consulta"
-        />
+                  {this.state.listaMedicos.map((tema) => {
+                    return (
+                      <option key={tema.idMedico} value={tema.idMedico}>
+                        {tema.nomeMedico}
+                      </option>
+                    );
+                  })}
+                </select>
 
-        <input 
-        type="datetime-local"
-        value={this.state.dataConsulta}
-        onChange={this.atualizarEstado}
-        />
+                <select
+                   className="cadastro_input"
+                  name="idSituacao"
+                  value={this.state.idSituacao}
+                  onChange={this.atualizarEstado}
+                >
+                  <option value="0">Selecione o id</option>
 
-        {this.state.isLoading === true && (
-        <button type="submit">Loading...</button>
-        )}
+                  {this.state.listaSituacoes.map((tema) => {
+                    return (
+                      <option key={tema.idSituacao} value={tema.idSituacao}>
+                        {tema.descricaoSituacao}
+                      </option>
+                    );
+                  })}
+                </select> 
 
-        {this.state.isLoading === false && (
-        <button type="submit">Cadastrar</button>
-        )}
+                <input
+                className="cadastro_input"
+                  required
+                  type="text"
+                  name="descricao"
+                  value={this.state.descricao}
+                  onChange={this.atualizarEstado}
+                  placeholder="Descrição da Consulta"
+                />
 
-        </form>
+                <input
+                  className="cadastro_input"
+                  type="date"
+                  name="dataConsulta"
+                  value={this.dataConsulta}
+                  onChange={this.atualizarEstado}
+                />
 
+                {this.state.isLoading && (
+                  <button className="botao-cada-consulta" type="submit" disabled>
+                    Loading...{' '}
+                  </button>
+                )}
 
-
+                {this.state.isLoading === false && (
+                  <button className="botao-cada-consulta" id="cadastrado" type="submit">Cadastrar</button>
+                )}
+              </div>
+            </form>
         </div>
         <div className="main_consultaC" ></div>
         </section>

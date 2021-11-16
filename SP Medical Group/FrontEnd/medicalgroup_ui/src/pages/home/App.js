@@ -19,15 +19,17 @@ function App() {
         </div>
         <div class="section-block">
             <div class="block" id="block_itself">
-                <NavLink to="/CadastroConsulta">
+                <Link to="/CadastroConsulta">
                 <img src={icon1} alt=""/>
                 <span>Agendar Consultas</span>
-                </NavLink>
+                </Link>
             </div>
+                <Link to="/listarMeus">
             <div class="block" id="block_itself">
                 <img src={icon2} alt=""/>
                 <span>Listar Consultas</span>
             </div>
+                </Link>
             <div class="block" id="block_itself">
                 <img src={icon3} alt=""/>
                 <span>Encontre um Médico</span>

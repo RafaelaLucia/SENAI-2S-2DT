@@ -12,10 +12,18 @@ import home from '../../pages/home/App'
 <div className="navigation-header">
 <span>Especialidades</span>
 <span>Encontre um Médico</span>
+
+<NavLink className="nav-header"  to="/listarMeus">
 <span>Listar minhas Consultas</span>
+</NavLink>
 </div>
+
 <NavLink to='/login'>
-<button className="button-header">Logar</button>
+<button 
+
+className="button-header"
+>Logar
+</button>
 </NavLink>
 </header>
  ) 

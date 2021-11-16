@@ -7,8 +7,9 @@ import { Route, BrowserRouter as Router, Redirect ,Switch } from 'react-router-d
 import Home from './pages/home/App';
 import Login from './pages/login/login';
 import NotFound from './pages/notFound/notFound';
-import CadastroC from './pages/CadastrarConsulta/cadastrarConsulta'
+import Cadastro from './pages/CadastrarConsulta/cadastrarConsulta'
 import MinhasConsultas from './pages/ListarMeus/listarMeus'
+import MedicosConsulta from './pages/ListarMeusMedicos/listarMeusMedicos'
 //Report
 import reportWebVitals from './reportWebVitals';
 import {parseJwt, usuarioLogado } from './services/auth';
@@ -26,7 +27,6 @@ const PermissaoAdm = ({ component: Component }) => (
   />
 );
 
-
 const routing = (
   <Router>
     <div>
@@ -34,7 +34,8 @@ const routing = (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/listarMeus" component={MinhasConsultas} />
-        <PermissaoAdm path="/CadastroConsulta" component={CadastroC} />
+        <Route path="/listarMeusMedicos" component={MedicosConsulta} />
+        <PermissaoAdm path="/CadastroConsulta" component={Cadastro} />
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>

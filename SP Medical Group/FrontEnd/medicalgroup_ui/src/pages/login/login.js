@@ -38,21 +38,15 @@ export default class Login extends Component {
             //    debugger;
             //    this.props.history.push("/")
                let base64 = localStorage.getItem('usuario-login').split('.')[1];
-               console.log( JSON.parse( window.atob(base64) ) );
-               let usuario = JSON.parse( window.atob(base64))
-               if(usuario.role === '1'){
-                   console.log('a')
+               console.log( JSON.parse( window.atob(base64) ).role );
+               if(parseJwt().role === '1'){
                    this.props.history.push('/CadastroConsulta');
                    console.log('tá logando' + usuarioLogado())
-               }else if(usuario.role === '3'){
-                console.log('ab')
+               }else if(parseJwt().role === '3'){
                 this.props.history.push('/listarMeus');
                 console.log('tá logando' + usuarioLogado())
-               }else if(usuario.role === '2'){
-                console.log('abc')
-                this.props.history.push('/')
-               }else {
-                   console.log('nothing')
+               }else if(parseJwt().role === '2'){
+                this.props.history.push('/listarMeusMedicos')
                }
            }
        }).catch(() => {
@@ -68,7 +62,7 @@ export default class Login extends Component {
         <div>
        <Header/>
 
-<section>
+<section> 
         <div className="login_block">
             <div className="img-block"></div>
             <div className="block-ad">

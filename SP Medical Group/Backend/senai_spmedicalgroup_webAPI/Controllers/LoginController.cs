@@ -41,7 +41,8 @@ namespace senai_spmedicalgroup_webAPI.Controllers
                 {
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.EnderecoEmail),
                     new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
-                    new Claim(ClaimTypes.Role, usuarioBuscado.IdTipo.ToString())
+                    new Claim(ClaimTypes.Role, usuarioBuscado.IdTipo.ToString()),
+                    new Claim( "role", usuarioBuscado.IdTipo.ToString() )
                 };
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("DUoWyXzWbY-SPMDG"));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

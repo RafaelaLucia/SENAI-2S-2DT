@@ -31,14 +31,14 @@ values (4,'Ligia','13/10/1983','94839859000','Rua Estado de Israel 240, São Paul
 go
 
 insert into Medico (idClinica, idUsuario, idEspecialidades, nomeMedico, CRM)
-values (3,1,2,'Ricardo Lemos','54356-SP'),(3,2,17,'Roberto Possarle','53452-SP'),(3,3,16,'Helena Strada','65463-SP');
+values (6,1,2,'Ricardo Lemos','54356-SP'),(6,2,17,'Roberto Possarle','53452-SP'),(6,3,16,'Helena Strada','65463-SP');
 go
 delete Medico
 
 
 insert into Consulta (idSituacao, idPaciente, idMedico, dataConsulta, descricao)
-values (1,7,12, '20/01/2020 15:00:00','exame de rotina'),(3,2,11, '06/01/2020 10:00:00','consulta semanal'),(1,3,11, '07/02/2020 11:00:00','consulta semanal'),(1,2,11, '06/02/2018 10:00:00', 'exame diagnóstico'),
-(3,4,10, '07/02/2019 11:00:45','consulta semanal'),(2,7,12, '08/03/2020 15:00:00','exame de rotina'),(2,4,10, '09/03/2020 11:00:45','exame diagnóstico');
+values (1,7,7, '20/01/2020 15:00:00','exame de rotina'),(3,2,6, '06/01/2020 10:00:00','consulta semanal'),(1,3,6, '07/02/2020 11:00:00','consulta semanal'),(1,2,6, '06/02/2018 10:00:00', 'exame diagnóstico'),
+(3,4,5, '07/02/2019 11:00:45','consulta semanal'),(2,7,7, '08/03/2020 15:00:00','exame de rotina'),(2,4,5, '09/03/2020 11:00:45','exame diagnóstico');
 go
 delete Consulta
 

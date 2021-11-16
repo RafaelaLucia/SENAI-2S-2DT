@@ -10,7 +10,7 @@ export default function ListarMeus(){
     const [ ListarMinhasConsultas, setListarMinhasConsultas ] = useState( [] );
 
     function buscarMinhasConsultas(){
-        axios('http://localhost:5000/api/Consultas/MinhasConsultas/Paciente', {
+        axios('http://localhost:5000/api/Consultas/MinhasConsultas/Medico', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }

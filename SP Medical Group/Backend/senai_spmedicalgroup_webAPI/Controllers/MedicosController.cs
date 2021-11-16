@@ -22,7 +22,6 @@ namespace senai_spmedicalgroup_webAPI.Controllers
             _medicoRepository = new MedicoRepository();
         }
 
-        [Authorize]
         [HttpGet]
         public IActionResult ListarMedicos()
         {
