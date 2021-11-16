@@ -38,19 +38,21 @@ export default class Login extends Component {
             //    debugger;
             //    this.props.history.push("/")
                let base64 = localStorage.getItem('usuario-login').split('.')[1];
-               console.log(base64);
-               console.log(this.props);
-               if(parseJwt.role === '1'){
+               console.log( JSON.parse( window.atob(base64) ) );
+               let usuario = JSON.parse( window.atob(base64))
+               if(usuario.role === '1'){
                    console.log('a')
                    this.props.history.push('/CadastroConsulta');
                    console.log('tá logando' + usuarioLogado())
-               }else if(parseJwt.role === '3'){
+               }else if(usuario.role === '3'){
                 console.log('ab')
                 this.props.history.push('/listarMeus');
                 console.log('tá logando' + usuarioLogado())
-               }else if(parseJwt.role === '2'){
+               }else if(usuario.role === '2'){
                 console.log('abc')
                 this.props.history.push('/')
+               }else {
+                   console.log('nothing')
                }
            }
        }).catch(() => {

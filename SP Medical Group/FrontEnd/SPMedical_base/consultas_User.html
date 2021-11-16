@@ -27,32 +27,36 @@
             </div>
         </div>
     </section>
-    <section class="conteudo-consulta">
-        <table class="section_dados_consulta">
-            <tr>
-                <div id="block_consulta">
-                    <td>{consulta.descricao}</td>
-                    <td>{consulta.IdSituacao}</td>
-                </div>
-            </tr>
-            <div class="section-consulta-informacao">
-                <h2>Consulta do dia 08/11/2021</h2>
-                <span>Consulta Psiquiátrica</span>
-            </div>
-            <tr>
-                <div id="block_consulta">
-                    <h3>Consulta do dia 08/10/2021</h3>
+   <section class="secao-minhas">
+       <table>
+           {
+               listaMeusEventos.map( (minhaPresenca) => {
+               <td class="bloco-minhas">
+                   <h2>Consulta do dia 06/10/2021</h2>
+                   <img src="assets/img/star.png" alt="">
+                   <span>AGENDADA</span>
+                   <p>Médico: Ricardo Lemos</p>
+                   <p>Paciente: Henrique Elias</p>
+                   <p>às 13h00</p>
+                </td>
+            }
+                <td class="bloco-minhas">
+                    <h2>Consulta do dia 07/10/2021</h2>
                     <span>AGENDADA</span>
-                </div>
-            </tr>
-            <tr>
-                <div id="block_consulta">
-                    <h3>Consulta do dia 23/09/2021</h3>
-                    <span>REALIZADA</span>
-                </div>
-            </tr>
-        </table>
-        </div>
+                    <p>Médico: Ricardo Lemos</p>
+                    <p>Paciente: Henrique Elias</p>
+                    <p>às 13h00</p>
+                </td>
+                <td class="bloco-minhas">
+                    <h2>Consulta do dia 08/10/2021</h2>
+                    <span>AGENDADA</span>
+                    <p>Médico: Ricardo Lemos</p>
+                    <p>Paciente: Henrique Elias</p>
+                    <p>às 13h00</p>
+                </td>
+                
+               
+       </table>
     </section>
 </body>
 </html>

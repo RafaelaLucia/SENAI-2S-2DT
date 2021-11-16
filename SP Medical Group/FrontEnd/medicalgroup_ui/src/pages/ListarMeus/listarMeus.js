@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
+import '../../assets/css/style.css';
+import foto from '../../assets/img/und_med.png'
 
 
 export default function ListarMeus(){
@@ -21,47 +23,53 @@ export default function ListarMeus(){
         })
         .catch( erro => console.log(erro) );
     };
+
+   
     
     useEffect( buscarMinhasConsultas, [] );
 
     return(
         <div>
          <Header/>
-         <span>Listar minhas/ Paciente</span>
-    <section class="section_main_consulta">
-        <div class="sec_consulta">
-            <img src="./assets/img/und_med.png" alt=""/>
-            <div class="sec_consulta_font">
-                <h1>{'Você tem' + ListarMinhasConsultas[buscarMinhasConsultas.length-1] + 'consultas agendadas'}</h1>
-                {/* console.log(ListaAlunos[ListaAlunos.length-1]); */}
-                <p>Total de consultas : 3</p>
-            </div>
+    <section className="section_main_consulta">
+        <div className="sec_consulta">
+            <img src={foto} alt=""/>
+            <div className="sec_consulta_font">
+                    <p>
+                     Total de Consultas:
+                    {
+                        (buscarMinhasConsultas[buscarMinhasConsultas.length-1])
+                    }
+                    </p>
+        </div>
         </div>
     </section>
-    <section class="conteudo-consulta">
-        <table class="section_dados_consulta">
-            <tbody>
-            <tr>
-            {
-                ListarMinhasConsultas.map( (consulta) => {
-                return(
-                <div id="block_consulta">
-                    <td>{ Intl.DateTimeFormat("pt-BR", {
-                        year: 'numeric', month: 'numeric', day: 'numeric',
-                        hour: 'numeric', minute: 'numeric', hour12: true
+   <section className="secao-minhas">
+       <table>
+           <tbody>
+
+           {
+               ListarMinhasConsultas.map( (consulta) => {
+                   return(
+                    <tr key={consulta.idConsulta} className="bloco-minhas">
+                    <td className="data-meus">Consulta do dia { Intl.DateTimeFormat("pt-BR", {
+                    year: 'numeric', month: 'numeric', day: 'numeric',
                     }).format(new Date(consulta.dataConsulta)) }</td>
-                    <td>{consulta.IdSituacao}</td>
-                </div>
-            )
-        } )
+                    <td className="span-meus">{consulta.idSituacaoNavigation.descricaoSituacao}</td>
+                   <img src="assets/img/star.png" alt=""/>
+                   <td className="p-meus">Médico: {consulta.idMedicoNavigation.nomeMedico}</td>
+                   <td className="p-meus">Paciente: {consulta.idPacienteNavigation.nomePaciente}</td>
+                   <td className="p-meus"> às { Intl.DateTimeFormat("pt-BR", {
+                    hour: 'numeric', minute: 'numeric', hour12: true
+                    }).format(new Date(consulta.dataConsulta)) }</td>
+
+                   <td className="p-meus">Descrição: {consulta.descricao}</td>
+                   </tr>
+                   )
+        } )                                
     }
-            </tr>           
-            </tbody>
-            </table>
-
-        <div class="section-consulta-informacao">
-
-        </div>
+    </tbody>
+       </table>
     </section>
          <Footer/>
 
