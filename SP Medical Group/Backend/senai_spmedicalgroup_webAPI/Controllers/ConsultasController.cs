@@ -96,6 +96,7 @@ namespace senai_spmedicalgroup_webAPI.Controllers
                 }
             }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult ListarConsultas()
         {

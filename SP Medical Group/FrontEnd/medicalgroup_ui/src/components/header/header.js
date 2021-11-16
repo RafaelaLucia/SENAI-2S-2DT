@@ -13,7 +13,9 @@ import home from '../../pages/home/App'
 <span>Especialidades</span>
 <span>Encontre um Médico</span>
 
-<NavLink className="nav-header"  to="/listarMeus">
+<NavLink className="nav-header"  to={ 
+ 
+}>
 <span>Listar minhas Consultas</span>
 </NavLink>
 </div>
