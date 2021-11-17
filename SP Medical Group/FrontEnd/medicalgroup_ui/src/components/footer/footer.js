@@ -1,7 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import Logo from '../../assets/img/logo.png'
-import home from '../../pages/home/App'
 import redes from '../../assets/img/image 11.png'
 import redes2 from '../../assets/img/image 12.png'
 import redes3 from '../../assets/img/image 13.png'

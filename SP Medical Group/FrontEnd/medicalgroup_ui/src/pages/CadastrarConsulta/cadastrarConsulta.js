@@ -165,14 +165,12 @@ export default class cadastrarConsulta extends Component {
                   value={this.state.idSituacao}
                   onChange={this.atualizarEstado}
                 >
-                  <option value="0">Selecione o id</option>
+                  <option value="0">Selecione a Situação</option>
 
                   {this.state.listaSituacoes.map((tema) => {
                     return (
-                      <option key={tema.idSituacao} value={tema.idSituacao}>
-                        {tema.descricaoSituacao}
-                      </option>
-                    );
+                      <option key={tema.idSituacao} value={tema.idSituacao}>{tema.descricaoSituacao}</option>
+                  );
                   })}
                 </select> 
 

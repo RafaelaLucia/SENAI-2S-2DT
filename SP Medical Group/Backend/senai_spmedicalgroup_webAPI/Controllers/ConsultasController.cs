@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using senai_spmedicalgroup_webAPI.Domains;
 using senai_spmedicalgroup_webAPI.Interfaces;
 using senai_spmedicalgroup_webAPI.Repositories;
+using senai_spmedicalgroup_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -151,31 +152,38 @@ namespace senai_spmedicalgroup_webAPI.Controllers
         }
 
         [Authorize(Roles = "2")]
-        [HttpPatch("Descricao/{idConsulta}")]
-        public IActionResult AlterarDescricao(int idConsulta, Consultum consulta)
+        [HttpPatch("/descricao/{idConsulta}")]
+        public IActionResult MudarDescricao(int idConsulta, DescricaoViewModel descricao)
         {
-            int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-
-            if (consulta.Descricao == null)
+            try
             {
-                return BadRequest(new
+                if (idConsulta <= 0)
                 {
-                    Mensagem = "Não foi possível alterar a descrição pois nada foi inserido"
-                });
+                    return NotFound(
+                            new
+                            {
+                                mensagem = "Id inválido",
+                                erro = true
+                            }
+                        );
+                }
+                int idUserMedico = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                bool altered = _consultaRepository.MudarDescricao(idConsulta, idUserMedico, descricao);
+
+                if (altered) return NoContent();
+
+                return NotFound(
+                        new
+                        {
+                            mensagem = "Consulta não encontrada ou Médico não responsável pela consulta",
+                            erro = true
+                        }
+                    );
             }
-
-          //Consultum procurarM = _consultaRepository.BuscarPorId(idMedico);
-            
-          // if (idUsuario != procurarM.IdConsulta)
-          //  {
-          //      return Unauthorized(new
-          //      {
-          //          Mensagem = "Não foi possível alterar a descrição pois somente o médico responsável por essa consulta tem autorização para tal mudança"
-          //      });
-          //  }
-            _consultaRepository.MudarDescricao(idConsulta,  consulta.Descricao);
-
-            return Ok(consulta);
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
         }
 
 

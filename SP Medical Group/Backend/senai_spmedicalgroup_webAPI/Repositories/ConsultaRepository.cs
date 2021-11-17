@@ -2,6 +2,7 @@
 using senai_spmedicalgroup_webAPI.Context;
 using senai_spmedicalgroup_webAPI.Domains;
 using senai_spmedicalgroup_webAPI.Interfaces;
+using senai_spmedicalgroup_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -120,13 +121,19 @@ namespace senai_spmedicalgroup_webAPI.Repositories
               .ToList();
         }
 
-            public void MudarDescricao(int idConsulta, string descricao)
+        public bool MudarDescricao(int idConsulta, int idUserMedico, DescricaoViewModel consulta)
         {
-            Consultum consultaBuscada = ctx.Consulta.FirstOrDefault(c => c.IdConsulta == idConsulta);
-            consultaBuscada.Descricao = descricao;
-         //   consultaBuscada.IdMedico = idMedico;
+            Consultum consultaBuscada = ctx.Consulta.FirstOrDefault(p => p.IdConsulta == idConsulta);
+            Medico medico = ctx.Medicos.FirstOrDefault(m => m.IdUsuario == idUserMedico);
+
+            if (consultaBuscada == null) return false;
+            if (medico.IdMedico != consultaBuscada.IdMedico) return false;
+
+            consultaBuscada.Descricao = consulta.Descricao;
             ctx.Consulta.Update(consultaBuscada);
             ctx.SaveChanges();
+
+            return true;
         }
     }
 }

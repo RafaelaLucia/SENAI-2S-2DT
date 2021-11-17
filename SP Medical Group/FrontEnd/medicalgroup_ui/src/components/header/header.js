@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Logo from '../../assets/img/logo.png'
-import home from '../../pages/home/App'
 
  export default function Hedaer(){
  return (
@@ -12,12 +11,6 @@ import home from '../../pages/home/App'
 <div className="navigation-header">
 <span>Especialidades</span>
 <span>Encontre um Médico</span>
-
-<NavLink className="nav-header"  to={ 
- 
-}>
-<span>Listar minhas Consultas</span>
-</NavLink>
 </div>
 
 <NavLink to='/login'>

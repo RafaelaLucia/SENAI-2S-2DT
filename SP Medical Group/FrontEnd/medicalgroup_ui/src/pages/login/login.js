@@ -3,10 +3,7 @@ import axios from 'axios';
 import { parseJwt, usuarioLogado } from '../../services/auth';
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
-
 import '../../assets/css/style.css';
-import { Redirect } from 'react-router-dom';
-
 
 export default class Login extends Component {
     constructor(props) {

@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import img from '../../assets/img'
 
 import Header from "../../components/header/header";
@@ -6,7 +6,9 @@ import Footer from '../../components/footer/footer'
 import icon1 from '../../assets/img/calendar.png'
 import icon2 from '../../assets/img/search.png'
 import icon3 from '../../assets/img/doctor.png'
-import clinica from '../../assets/img/Clinica.png'
+import clinica from '../../assets/img/ClinicaPossarle.png'
+import clinica2 from '../../assets/img/ClinicaGaspar.png'
+import clinica3 from '../../assets/img/Santahelena.png'
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
             <div class="block" id="block_itself">
                 <Link to="/CadastroConsulta">
                 <img src={icon1} alt=""/>
-                <span>Agendar Consultas</span>
+                <span className="span-clinics">Agendar Consultas</span>
                 </Link>
             </div>
                 <Link to="/listarMeus">
@@ -40,10 +42,12 @@ function App() {
         <h2>Unidades SP Medical Group</h2>
         <div class="clinics-img">
             <img src={clinica} alt=""/>
-            <img src={clinica} alt=""/>
-            <img src={clinica} alt=""/>
+            <img src={clinica2} alt=""/>
+            <img src={clinica3} alt=""/>
         </div>
-            <button id="btn_clinics">Ver mais unidades</button>
+        <div>
+            <button className="btn_clinics">Ver mais unidades</button>
+        </div>
     </section>
 
     <Footer/>
