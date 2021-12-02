@@ -7748,11 +7748,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\SP Medical Group\\Backend\\senai_spmedicalgroup_webAPI\\senai_spmedicalgroup_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\SP Medical Group\\Backend\\senai_spmedicalgroup_webAPI\\senai_spmedicalgroup_webAPI.csproj",
       "projectName": "senai_spmedicalgroup_webAPI",
-      "projectPath": "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\SP Medical Group\\Backend\\senai_spmedicalgroup_webAPI\\senai_spmedicalgroup_webAPI.csproj",
+      "projectPath": "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\SP Medical Group\\Backend\\senai_spmedicalgroup_webAPI\\senai_spmedicalgroup_webAPI.csproj",
       "packagesPath": "C:\\Users\\47499026833\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\SP Medical Group\\Backend\\senai_spmedicalgroup_webAPI\\obj\\",
+      "outputPath": "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\SP Medical Group\\Backend\\senai_spmedicalgroup_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\47499026833\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7834,7 +7834,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

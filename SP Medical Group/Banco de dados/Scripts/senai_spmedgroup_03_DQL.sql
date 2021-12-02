@@ -21,6 +21,7 @@ select COUNT (idUsuario) AS Usuario from Usuario;
 
 select * from usuario
 select * from Paciente
+select * from Medico
 select * from Consulta
 
 select * from Situacao
@@ -31,6 +32,7 @@ select * from Medico
 select * from especialidades
 select * from imagemUsuario
 select * from clinica
+select * from usuario
 
 SELECT dataNascimento as 'Data de Nascimento', DATEDIFF(YEAR, [dataNascimento], GETDATE()) AS Idade
 FROM [Paciente];
