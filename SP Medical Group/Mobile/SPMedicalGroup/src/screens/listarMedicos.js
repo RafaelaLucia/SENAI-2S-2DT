@@ -12,7 +12,7 @@ export default class Home extends Component {
 
   buscarConsultas = async () => {
     try {
-    const r = await api.get('/Consultas/MinhasConsultas/Paciente');
+    const r = await api.get('/Consultas/MinhasConsultas/Medico');
     //  console.warn(r);
     const dadosDaApi = await r.data;
     this.setState({listaConsultas: dadosDaApi});
@@ -30,8 +30,7 @@ export default class Home extends Component {
       <View style={styles.main}>
       {/* Cabeçalho - Header */}
       <View style={styles.header}>
-          <Text style={styles.headerText}>Você tem X consultas agendadas</Text>
-          <Text style={styles.headerText}>De um total de X</Text>
+          <Text style={styles.headerText}>Projetos</Text>
         </View>
       {/* Corpo - Body */}
       <View  style={styles.boxInputs}>
@@ -56,7 +55,7 @@ renderItem = ({item}) => (
         }).format(new Date(item.dataConsulta))}
       </Text>
       <Text style={styles.projeto}>{item.idSituacaoNavigation.descricaoSituacao}</Text>
-      <Text style={styles.flatItemInfo}>Médico: {item.idMedicoNavigation.nomeMedico}</Text>
+      <Text style={styles.flatItemInfo}>Paciente: {item.idPacienteNavigation.nomePaciente}</Text>
       <Text style={styles.flatItemInfo}>{item.descricao}</Text>
     </View>
     <View style={styles.footer}> 
