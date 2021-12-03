@@ -17,16 +17,9 @@ export default class BarraNavegacao extends Component {
                     backgroundColor='#226089'
                 />
                 <bottomTab.Navigator 
-                    initialRouteName='Home'
+                    initialRouteName='Perfil'
                     screenOptions={({ route }) => ({
                         tabBarIcon: () => {
-                            if (route.name === 'Home') {
-                                  return(  
-                                  <Image source={require('../assets/home.png')}
-                                  style={styles.tabBarIcon}/>
-                                  )
-                            }
-
                             if(route.name === 'Listar'){
                                 return(
                                     <Image source = {require('../assets/listar.png')}
@@ -34,6 +27,13 @@ export default class BarraNavegacao extends Component {
                                 />
                                 )
                             }
+
+                            if (route.name === 'Home') {
+                                return(  
+                                <Image source={require('../assets/home.png')}
+                                style={styles.tabBarIcon}/>
+                                )
+                          }
                             
                             if(route.name === 'ListarMedicos'){
                                 return(
@@ -53,14 +53,14 @@ export default class BarraNavegacao extends Component {
                         },
                         headerShown : false,
                         tabBarShowLabel: false,
-                        tabBarActiveBackgroundColor: '#226089',
-                        tabBarInactiveBackgroundColor: '#226089',
+                        tabBarActiveBackgroundColor: '#0E3961',
+                        tabBarInactiveBackgroundColor: '#0E3961',
                         tabBarStyle : {height : 71},
                         tabBarHideOnKeyboard : true
                     })}
                 >
-                    <bottomTab.Screen name = "Listar" component = {Listar}/>
                     <bottomTab.Screen name = "Home" component = {Home}/>
+                    <bottomTab.Screen name = "Listar" component = {Listar}/>
                     <bottomTab.Screen name = "Perfil" component = {Perfil}/>
                 </bottomTab.Navigator>
             </View>
