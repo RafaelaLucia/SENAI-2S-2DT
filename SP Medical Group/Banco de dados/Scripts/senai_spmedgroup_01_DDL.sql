@@ -80,7 +80,7 @@ go
 drop table consulta
 
 alter table consulta
-add descricao varchar(300) 
+add idClinica smallint foreign key references Clinica (idClinica),
 
 create table Usuario (
  idUsuario int primary key identity,

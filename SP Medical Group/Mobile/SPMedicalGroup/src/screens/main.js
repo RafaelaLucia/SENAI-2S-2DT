@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {Alert, Image, StatusBar, StyleSheet, View} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const bottomTab = createBottomTabNavigator();
-//Components Locais
-import Home from './home'
+
+import Home from './Home'
 import Perfil from './perfil';
 import Listar from './listar';
-import Medicos from './listarMedicos';
+import ListarMedicos from './listarMedicos';
+import { resolvePlugin } from '@babel/core';
+import jwtDecode from 'jwt-decode';
 
-export default class BarraNavegacao extends Component {
+export default class main extends Component {
     render() {
         return (
             <View style={styles.main}>
@@ -17,15 +19,14 @@ export default class BarraNavegacao extends Component {
                     backgroundColor='#226089'
                 />
                 <bottomTab.Navigator 
-                    initialRouteName='Home'
+                    initialRouteName='Perfil'
                     screenOptions={({ route }) => ({
                         tabBarIcon: () => {
-                            if (route.name === 'Home') {
-                                  return(  
-                                  <Image source={require('../assets/home.png')}
-                                  style={styles.tabBarIcon}/>
-                                  )
-                            }
+
+                            // if(parseJwt().role === '1'){
+                            //     console.warn('medico etst')
+                                
+                            // }
 
                             if(route.name === 'Listar'){
                                 return(
@@ -34,6 +35,13 @@ export default class BarraNavegacao extends Component {
                                 />
                                 )
                             }
+
+                            if (route.name === 'Home') {
+                                return(  
+                                <Image source={require('../assets/home.png')}
+                                style={styles.tabBarIcon}/>
+                                )
+                          }
                             
                             if(route.name === 'ListarMedicos'){
                                 return(
@@ -53,14 +61,15 @@ export default class BarraNavegacao extends Component {
                         },
                         headerShown : false,
                         tabBarShowLabel: false,
-                        tabBarActiveBackgroundColor: '#226089',
-                        tabBarInactiveBackgroundColor: '#226089',
+                        tabBarActiveBackgroundColor: '#0E3961',
+                        tabBarInactiveBackgroundColor: '#0E3961',
                         tabBarStyle : {height : 71},
                         tabBarHideOnKeyboard : true
                     })}
                 >
-                    <bottomTab.Screen name = "Listar" component = {Listar}/>
                     <bottomTab.Screen name = "Home" component = {Home}/>
+                    <bottomTab.Screen name = "Listar" component = {Listar}/>
+                    {/* <bottomTab.Screen name = "ListarMedicos" component = {ListarMedicos}/> */}
                     <bottomTab.Screen name = "Perfil" component = {Perfil}/>
                 </bottomTab.Navigator>
             </View>

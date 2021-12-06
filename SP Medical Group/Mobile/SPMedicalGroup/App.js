@@ -10,6 +10,7 @@ const AuthStack = createStackNavigator();
 
 import Login from './src/screens/login';
 import Main from './src/screens/main'
+// import Home from './src/screens/home'
 
 export default function Stack() {
   return (
