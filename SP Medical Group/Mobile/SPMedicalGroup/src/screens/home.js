@@ -1,74 +1,106 @@
 import React, {Component} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+    Image,
+    ImageBackground,
+    TextInput,
+  } from 'react-native';
 import api from '../services/api';
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      listaConsultas: [],
-    };
-  }
-
-  buscarConsultas = async () => {
-    try {
-    const r = await api.get('/Usuarios/Projetos/Listar');
-    //  console.warn(r);
-    const dadosDaApi = await r.data;
-    this.setState({listaConsultas: dadosDaApi});
-    } catch (error) {
-      console.warn(error);
+export default class Consultas extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        
+      };
     }
-  }
+    render() {
+        return (
+          <ImageBackground
+          
+            source={require('../assets/clinic.png')}
+            style={StyleSheet.absoluteFillObject}>
+           <View>
+               <Text style={styles.loginText}>São Paulo Medical Group</Text>
+            </View>
+          <View style={styles.overlay}/>
+          <Text style={styles.btnLoginText}></Text>
+          <View style={styles.main}>
+            </View>
+          </ImageBackground>
+        );
+      }
+    }
 
-  componentDidMount() {
-    this.buscarConsultas();
-  }
-  
-  render() {
-    return (
-      <View style={styles.main}>
-      {/* Cabeçalho - Header */}
-      <View style={styles.header}>
-          <Text style={styles.headerText}>Projetos</Text>
-        </View>
-      {/* Corpo - Body */}
-      <View  style={styles.boxInputs}>
-        <FlatList
-          contentContainerStyle={styles.mainBodyContent}
-          data={this.state.listaConsultas}
-          keyExtractor={item => item.idConsulta}
-          renderItem={this.renderItem}
-        />
-      </View>
-    </View>
-  );
-}
-
-renderItem = ({item}) => (
-  // <Text style={{ fontSize: 20, color: 'red' }}>{item.nomeEvento}</Text>
-
-  <View  style={styles.boxInputs}>
-    <View style={styles.cadastroInputs}>
-      <Text style={styles.projeto}>Projeto {item.nomeProjeto}</Text>
-      <Text style={styles.flatItemInfo}>Descrição: {item.descricao}</Text>
-      <Text style={styles.flatItemInfo}>Professor: {item.idProfessorNavigation.nomeProfessor}</Text>
-      <Text style={styles.flatItemInfo}>
-      Tema: {item.idTemaNavigation.nomeTema}
-      </Text>
-      <Text style={styles.flatItemInfo}>
-        {Intl.DateTimeFormat("pt-BR", {
-        year: 'numeric', month: 'short', day: 'numeric'
-        }).format(new Date(item.dataCriacao))}
-      </Text>
-    </View>
-    <View style={styles.footer}> 
-    </View>
-  </View>
-
-    );
-  }
-
-  const styles = StyleSheet.create({
-
-  });
+    const styles = StyleSheet.create({
+        //antes da main
+       
+        // conteúdo da main
+        main: {
+          // flex: 1,
+          //backgroundColor: '#F1F1F1', retirar pra nao ter conflito.
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          height: '100%',
+        },
+      
+        mainImgLogin: {
+          // tintColor: '#FFF', //confirmar que sera branco
+          height: 100, //altura
+          width: 90, //largura img nao é quadrada
+          margin: 60, //espacamento em todos os lados,menos pra cima.
+          marginTop: 0, // tira espacamento pra cima
+        },
+      
+        inputLogin: {
+          width: 300, //largura mesma do botao
+          height: 54,
+          marginBottom: 40, //espacamento pra baixo
+          fontSize: 18,
+          color: '#0E3961',
+          backgroundColor: '#B2D3F2',
+          borderRadius: 28,
+          // borderBottomColor: '#FFF', //linha separadora
+          // borderBottomWidth: 2, //espessura.
+        },
+      
+        btnLoginText: {
+          fontSize: 36, //aumentar um pouco
+          fontFamily: '', //troca de fonte
+          color: '#B2D3F2', //mesma cor identidade
+          letterSpacing: 2, //espacamento entre as letras
+          // textTransform: 'uppercase', //estilo maiusculo
+          fontFamily: 'Rubik-VariableFont_wght'
+        },
+        btnLogin: {
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: 55,
+          width: 229,
+          backgroundColor: '#0E3961',
+          borderColor: '#0E3961',
+          borderWidth: 1,
+          borderRadius: 15,
+          shadowOffset: {height: 1, width: 1},
+        },
+        loginText:{
+          fontSize: 30,
+          fontWeight: 'bold',
+          color: '#2B4761',
+          marginLeft: 35,
+          marginTop: 30
+          
+        },
+        LoginArea:{
+          alignItems: 'center',
+          // backgroundColor: 'blue',
+          justifyContent: 'center',
+        },
+        text:{
+          fontFamily: 'Rubik-VariableFont_wght'
+        }
+      });

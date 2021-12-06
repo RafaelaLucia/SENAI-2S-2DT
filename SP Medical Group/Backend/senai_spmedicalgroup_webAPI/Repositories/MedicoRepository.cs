@@ -1,4 +1,5 @@
-﻿using senai_spmedicalgroup_webAPI.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using senai_spmedicalgroup_webAPI.Context;
 using senai_spmedicalgroup_webAPI.Domains;
 using senai_spmedicalgroup_webAPI.Interfaces;
 using System;
@@ -46,7 +47,7 @@ namespace senai_spmedicalgroup_webAPI.Repositories
 
         public List<Medico> ListarTodos()
         {
-            return ctx.Medicos.ToList();
+            return ctx.Medicos.Include(c => c.IdClinicaNavigation).ToList();
         }
     }
 }

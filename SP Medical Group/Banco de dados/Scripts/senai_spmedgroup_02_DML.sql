@@ -37,9 +37,9 @@ delete Medico
 delete Paciente
 
 
-insert into Consulta (idSituacao, idPaciente, idMedico, dataConsulta, descricao)
-values (1,15,8, '20/01/2020 15:00:00','exame de rotina'),(3,10,7, '06/01/2020 10:00:00','consulta semanal'),(1,11,7, '07/02/2020 11:00:00','consulta semanal'),(1,10,7, '06/02/2018 10:00:00', 'exame diagnóstico'),
-(3,12,6, '07/02/2019 11:00:45','consulta semanal'),(2,15,8, '08/03/2020 15:00:00','exame de rotina'),(2,12,6, '09/03/2020 11:00:45','exame diagnóstico');
+insert into Consulta (idSituacao, idPaciente, idMedico, idClinica, dataConsulta, descricao)
+values (1,15,8,4, '20/01/2020 15:00:00','exame de rotina'),(3,10,7,4, '06/01/2020 10:00:00','consulta semanal'),(1,11,7,4, '07/02/2020 11:00:00','consulta semanal'),(1,10,7,4, '06/02/2018 10:00:00', 'exame diagnóstico'),
+(3,12,6,4, '07/02/2019 11:00:45','consulta semanal'),(2,15,8,4, '08/03/2020 15:00:00','exame de rotina'),(2,12,6,4, '09/03/2020 11:00:45','exame diagnóstico');
 go
 delete Consulta
 

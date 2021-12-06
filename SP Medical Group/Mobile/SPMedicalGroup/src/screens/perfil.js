@@ -85,19 +85,8 @@ export default class Perfil extends Component {
     return (
       <View style={styles.main}>
         {/* Cabeçalho - Header */}
-        <View style={styles.mainHeader}>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              onPress={this.takePicture}
-              style={styles.capture}></TouchableOpacity>
-          </View>
-          <View style={styles.mainHeaderRow}>
-            <Text style={styles.mainHeaderText}>{'Perfil'.toUpperCase()}</Text>
-          </View>
-          <View style={styles.mainHeaderLine} />
-        </View>
-
-        {/* Corpo - Body - Section */}
+     
+       {/* Corpo - Body - Section */}
         <View style={styles.mainBody}>
           <View style={styles.mainBodyInfo}>
               <Image
@@ -162,6 +151,7 @@ const styles = StyleSheet.create({
     flex: 4,
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginTop: 30
   },
   // informações do usuário
   mainBodyInfo: {
@@ -169,8 +159,8 @@ const styles = StyleSheet.create({
   },
   mainBodyImg: {
     // backgroundColor: '#ccc',
-    width: 171.9,
-    height: 174,
+    width: 179.9,
+    height: 179,
     // borderRadius: 50,
     marginBottom: 50,
   },

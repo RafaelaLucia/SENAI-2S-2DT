@@ -8,7 +8,7 @@ import {
   ImageBackground,
   TextInput,
 } from 'react-native';
-
+// import reactNativeConfig from '../../../react-native.config';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import api from '../services/api';
@@ -17,8 +17,8 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      senha: '',
+      email: 'alexandre@gmail.com',
+      senha: 'alexan32',
     };
   }
  
@@ -34,7 +34,7 @@ realizarLogin = async () => {
     const tokenGerado = resposta.data.tokenGerado;
     await AsyncStorage.setItem('userToken', tokenGerado);
     if (resposta.status == 200) {
-      this.props.navigation.navigate('Home');
+      this.props.navigation.navigate('Main');
     }else{
       console.warn('deu ruim :(')
     }
@@ -61,7 +61,7 @@ realizarLogin = async () => {
             source={require('../assets/heart.png')}
             style={styles.mainImgLogin}
           />
-
+       
           <TextInput
             style={styles.inputLogin}
             placeholder="Endereço de e-mail"
@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
     color: '#B2D3F2', //mesma cor identidade
     letterSpacing: 2, //espacamento entre as letras
     // textTransform: 'uppercase', //estilo maiusculo
+    fontFamily: 'Rubik-VariableFont_wght'
   },
   btnLogin: {
     alignItems: 'center',
@@ -150,5 +151,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // backgroundColor: 'blue',
     justifyContent: 'center',
+  },
+  text:{
+    fontFamily: 'Rubik-VariableFont_wght'
   }
 });

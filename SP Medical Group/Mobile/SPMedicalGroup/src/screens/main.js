@@ -3,12 +3,12 @@ import {Alert, Image, StatusBar, StyleSheet, View} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const bottomTab = createBottomTabNavigator();
 //Components Locais
-import Home from './home'
+import Home from './Home'
 import Perfil from './perfil';
 import Listar from './listar';
 import Medicos from './listarMedicos';
 
-export default class BarraNavegacao extends Component {
+export default class main extends Component {
     render() {
         return (
             <View style={styles.main}>
