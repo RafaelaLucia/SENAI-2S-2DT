@@ -33,8 +33,30 @@ export default class Consultas extends Component {
     }
   };
 
+  medicoConsulta = async () => {
+    try {
+      const tokenGerado = await AsyncStorage.getItem('userToken');
+      if (tokenGerado != null) {
+        const resposta = await api.get('Consultas/MinhasConsultas/Medico', {
+          headers: {
+            Authorization: 'Bearer ' + tokenGerado,
+          },
+        });
+
+        if (resposta.status == 200) {
+          console.warn(resposta);
+          const dadosDaApi = resposta.data;
+          this.setState({listaConsultas: dadosDaApi});
+        }
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+  };
+
   componentDidMount() {
     this.buscarConsultas();
+    this.medicoConsulta();
   }
 
   render() {

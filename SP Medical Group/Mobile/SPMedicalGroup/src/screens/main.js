@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import {Alert, Image, StatusBar, StyleSheet, View} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const bottomTab = createBottomTabNavigator();
-//Components Locais
+
 import Home from './Home'
 import Perfil from './perfil';
 import Listar from './listar';
-import Medicos from './listarMedicos';
+import ListarMedicos from './listarMedicos';
+import { resolvePlugin } from '@babel/core';
+import jwtDecode from 'jwt-decode';
 
 export default class main extends Component {
     render() {
@@ -20,6 +22,12 @@ export default class main extends Component {
                     initialRouteName='Perfil'
                     screenOptions={({ route }) => ({
                         tabBarIcon: () => {
+
+                            // if(parseJwt().role === '1'){
+                            //     console.warn('medico etst')
+                                
+                            // }
+
                             if(route.name === 'Listar'){
                                 return(
                                     <Image source = {require('../assets/listar.png')}
@@ -61,6 +69,7 @@ export default class main extends Component {
                 >
                     <bottomTab.Screen name = "Home" component = {Home}/>
                     <bottomTab.Screen name = "Listar" component = {Listar}/>
+                    {/* <bottomTab.Screen name = "ListarMedicos" component = {ListarMedicos}/> */}
                     <bottomTab.Screen name = "Perfil" component = {Perfil}/>
                 </bottomTab.Navigator>
             </View>

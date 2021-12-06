@@ -27,9 +27,18 @@ export default class Consultas extends Component {
                <Text style={styles.loginText}>São Paulo Medical Group</Text>
             </View>
           <View style={styles.overlay}/>
-          <Text style={styles.btnLoginText}></Text>
           <View style={styles.main}>
+            <View style={styles.hrt}>
+               <Text style={styles.homeM}>Visualiza suas consultas de maneira rápida e prática, a qualquer hora ou lugar!</Text>
+               
             </View>
+            <Image
+            source={require('../assets/heart.png')}
+            style={styles.mainImgLogin}
+          />
+       
+            </View>
+
           </ImageBackground>
         );
       }
@@ -37,7 +46,7 @@ export default class Consultas extends Component {
 
     const styles = StyleSheet.create({
         //antes da main
-       
+     
         // conteúdo da main
         main: {
           // flex: 1,
@@ -46,14 +55,17 @@ export default class Consultas extends Component {
           alignItems: 'center',
           width: '100%',
           height: '100%',
+        
         },
       
         mainImgLogin: {
           // tintColor: '#FFF', //confirmar que sera branco
           height: 100, //altura
-          width: 90, //largura img nao é quadrada
-          margin: 60, //espacamento em todos os lados,menos pra cima.
-          marginTop: 0, // tira espacamento pra cima
+          width: 90,
+        //   marginBottom: 
+          
+          //largura img nao é quadrada
+          // tira espacamento pra cima
         },
       
         inputLogin: {
@@ -102,5 +114,17 @@ export default class Consultas extends Component {
         },
         text:{
           fontFamily: 'Rubik-VariableFont_wght'
+        },
+        homeM:{
+            padding: 10,
+            fontSize: 20,
+            color: '#000000',
+            fontWeight: 'bold',
+            marginBottom: 40
+        },
+        hrt:{
+            backgroundColor: '#65A7E6',
+            
+            
         }
       });
