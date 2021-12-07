@@ -15,6 +15,7 @@ namespace senai_spmedicalgroup_webAPI.Interfaces
         List<Consultum> ListarMinhasMedico(int idMedico);
         void AprovarRecusar(int idConsulta, string estado);
         void Deletar(int idConsulta);
+        List<Consultum> VerMinhas(int idUsuario);
         bool MudarDescricao(int idConsulta, int idUserMedico, DescricaoViewModel consulta);
         Consultum BuscarPorId(int idConsulta);
 

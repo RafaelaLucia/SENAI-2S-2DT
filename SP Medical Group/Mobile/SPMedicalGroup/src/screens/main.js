@@ -5,8 +5,7 @@ const bottomTab = createBottomTabNavigator();
 
 import Home from './Home'
 import Perfil from './perfil';
-import Listar from './listar';
-import ListarMedicos from './listarMedicos';
+import Listar from './Listagem';
 import { resolvePlugin } from '@babel/core';
 import jwtDecode from 'jwt-decode';
 

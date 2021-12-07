@@ -135,5 +135,58 @@ namespace senai_spmedicalgroup_webAPI.Repositories
 
             return true;
         }
+
+        public List<Consultum> VerMinhas(int idUsuario)
+        {
+            return ctx.Consulta.Select(c => new Consultum()
+            {
+              IdConsulta = c.IdConsulta,
+              DataConsulta = c.DataConsulta,
+              Descricao = c.Descricao,
+              IdMedicoNavigation = new Medico()
+              {
+                  IdMedico = c.IdMedicoNavigation.IdMedico,
+                  IdUsuario = c.IdMedicoNavigation.IdUsuario,
+                  Crm = c.IdMedicoNavigation.Crm,
+                  NomeMedico = c.IdMedicoNavigation.NomeMedico,
+                  IdClinicaNavigation = new Clinica()
+                  {
+                      NomeClinica = c.IdMedicoNavigation.IdClinicaNavigation.NomeClinica,
+                      Cnpj = c.IdMedicoNavigation.IdClinicaNavigation.Cnpj,
+                      RazaoSocial = c.IdMedicoNavigation.IdClinicaNavigation.RazaoSocial,
+                      Endereco = c.IdMedicoNavigation.IdClinicaNavigation.Endereco,
+                  },
+                  IdEspecialidadesNavigation = new Especialidade()
+                  {
+                      DescricaoEspecialidade = c.IdMedicoNavigation.IdEspecialidadesNavigation.DescricaoEspecialidade
+                  },
+                  IdUsuarioNavigation = new Usuario()
+                  {
+                     EnderecoEmail = c.IdMedicoNavigation.IdUsuarioNavigation.EnderecoEmail
+                  }
+                  },
+                  IdPacienteNavigation = new Paciente()
+                  {
+                     IdPaciente = c.IdPacienteNavigation.IdPaciente,
+                     IdUsuario = c.IdPacienteNavigation.IdUsuario,
+                     DataNascimento = c.IdPacienteNavigation.DataNascimento,
+                     NomePaciente = c.IdPacienteNavigation.NomePaciente,
+                     Telefone = c.IdPacienteNavigation.Telefone,
+                     Rg = c.IdPacienteNavigation.Rg,
+                     Cpf = c.IdPacienteNavigation.Cpf,
+                     EnderecoPaciente = c.IdPacienteNavigation.EnderecoPaciente,
+                     IdUsuarioNavigation = new Usuario()
+                     {
+                        EnderecoEmail = c.IdMedicoNavigation.IdUsuarioNavigation.EnderecoEmail
+                     }
+                  },
+                      IdSituacaoNavigation = new Situacao()
+                      {
+                          IdSituacao = c.IdSituacaoNavigation.IdSituacao,
+                          DescricaoSituacao = c.IdSituacaoNavigation.DescricaoSituacao
+                      }
+                  })
+                  .Where(p => p.IdMedicoNavigation.IdUsuario == idUsuario || p.IdPacienteNavigation.IdUsuario == idUsuario).ToList();
+        }
     }
 }

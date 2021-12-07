@@ -187,5 +187,22 @@ namespace senai_spmedicalgroup_webAPI.Controllers
         }
 
 
+        [Authorize(Roles = "3,2")]
+        [HttpGet("Minhas")]
+        public IActionResult ListarMinhas()
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                return Ok(_consultaRepository.VerMinhas(idUsuario));
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+
     }
 }
