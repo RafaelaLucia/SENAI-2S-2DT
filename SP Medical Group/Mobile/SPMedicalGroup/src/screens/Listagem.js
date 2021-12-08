@@ -44,7 +44,7 @@ export default class Consultas extends Component {
           <View style={styles.mainHeaderRow}>
             <Image source = {require('../assets/undraw.png')}style = {styles.mainHeaderImg}/>
             <Text style={styles.mainHeaderText}>
-              {'Consultas Paciente'}
+              {'Consultas'}
             </Text>
           </View>
         </View>
