@@ -23,7 +23,7 @@ export default class Consultas extends Component {
         });
 
         if (resposta.status == 200) {
-          console.warn(resposta);
+          // console.warn(resposta);
           const dadosDaApi = resposta.data;
           this.setState({listaConsultas: dadosDaApi});
         }

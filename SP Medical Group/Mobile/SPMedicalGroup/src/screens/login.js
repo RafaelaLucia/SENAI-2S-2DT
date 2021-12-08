@@ -24,7 +24,7 @@ export default class Login extends Component {
  
 realizarLogin = async () => { 
   try {
-    console.warn(this.state.email + ' ' + this.state.senha);
+    // console.warn(this.state.email + ' ' + this.state.senha);
 
     const resposta = await api.post('/Login', {
       email: this.state.email, //ADM@ADM.COM
@@ -38,7 +38,7 @@ realizarLogin = async () => {
     }else{
       console.warn('deu ruim :(')
     }
-    console.warn(tokenGerado);
+    // console.warn(tokenGerado);
     
   } catch (error) {
     console.warn(error)
