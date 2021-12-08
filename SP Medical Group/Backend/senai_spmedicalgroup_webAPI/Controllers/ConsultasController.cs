@@ -202,7 +202,5 @@ namespace senai_spmedicalgroup_webAPI.Controllers
                 return BadRequest(erro);
             }
         }
-
-
     }
 }

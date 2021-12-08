@@ -10,7 +10,7 @@ export default function ListarMeus(){
     const [ ListarMinhasConsultas, setListarMinhasConsultas ] = useState( [] );
 
     function buscarMinhasConsultas(){
-        axios('http://localhost:5000/api/Consultas/MinhasConsultas/Paciente', {
+        axios('http://localhost:5000/api/Consultas/Minhas', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -24,8 +24,6 @@ export default function ListarMeus(){
         .catch( erro => console.log(erro) );
     };
 
-   
-    
     useEffect( buscarMinhasConsultas, [] );
 
     return(
@@ -35,18 +33,7 @@ export default function ListarMeus(){
         <div className="sec_consulta">
             <img src={foto} alt=""/>
             <div className="sec_consulta_font">
-                    <p>
-                     Total de Consultas:
-                     {
-               ListarMinhasConsultas.map( (consulta) => {
-                   return(
-                    <div>
-                       {consulta.idConsulta}
-                    </div>
-                   )
-        } )                                
-    }
-                    </p>
+                <p>Minhas Consultas</p>
         </div>
         </div>
     </section>

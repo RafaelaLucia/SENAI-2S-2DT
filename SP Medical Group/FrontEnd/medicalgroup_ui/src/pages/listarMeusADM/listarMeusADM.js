@@ -36,7 +36,7 @@ export default function ListarMeus(){
             <img src={foto} alt=""/>
             <div className="sec_consulta_font">
                     <p>
-                     Total de Consultas:
+                Listagem Consultas
                     </p>
         </div>
         </div>

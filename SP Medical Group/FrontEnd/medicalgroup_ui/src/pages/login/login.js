@@ -25,7 +25,6 @@ export default class Login extends Component {
            email: this.state.email,
            senha: this.state.senha
        })
-
        .then(answ => {
            if(answ.status === 200){
             //    debugger
@@ -40,10 +39,10 @@ export default class Login extends Component {
                    this.props.history.push('/CadastroConsulta');
                    console.log('tá logando' + usuarioLogado())
                }else if(parseJwt().role === '3'){
-                this.props.history.push('/listarMeus');
+                this.props.history.push('/listarMinhas');
                 console.log('tá logando' + usuarioLogado())
                }else if(parseJwt().role === '2'){
-                this.props.history.push('/listarMeusMedicos')
+                this.props.history.push('/listarMinhas')
                }
            }
        }).catch(() => {
