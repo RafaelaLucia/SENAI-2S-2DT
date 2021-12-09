@@ -40,7 +40,6 @@ export default function ListarMeus(){
    <section className="secao-minhas">
        <table>
            <tbody>
-
            {
                ListarMinhasConsultas.map( (consulta) => {
                    return(

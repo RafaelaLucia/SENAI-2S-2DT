@@ -1,0 +1,28 @@
+1. Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
+
+Titulo = Titulo Uava
+Descrição = Java Best
+Concluída = verdadeiro
+
+Titulo = Titulo OSharp
+Descrição = CShark
+Concluída = falso
+
+Titulo = Titulo Pirebase
+Descrição = Fireb4se
+
+Titulo = Titulo YMicrosoft
+Descrição = MicroSOFT
+
+Titulo = Titulo Roracle
+Descrição = Oracle Inc.
+Data de Inclusão = data de hoje
+
+
+R:
+db.materias.update( {"id" : "" }, { titulo: "titulo Uava", descricao: "Java Best", concluida: true } )
+db.materias.update( {"id" : "" }, { titulo: "titulo OSharp", descricao: "CShark", concluida: false } )
+db.materias.update( {"id" : "" }, { titulo: "titulo Pirebase", descricao: "Fireb4se"} )
+db.materias.update( {"id" : "" }, { titulo: "titulo YMicrosoft", descricao: "MicroSOFT"} )
+db.materias.update( {"id" : "" }, { titulo: "titulo Roracle", descricao: "Oracle Inc.",  data_de_inclusao: 09/12/2021 } )
+

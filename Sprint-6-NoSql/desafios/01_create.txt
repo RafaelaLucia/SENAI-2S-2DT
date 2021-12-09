@@ -1,0 +1,37 @@
+1. Defina o uso do banco de dados "cursos"
+
+R: use cursos
+
+2. Crie uma collection para armazenar as "matérias"
+ 
+R: db.createCollection("materias")
+
+3. Insira 5 novos registros conforme descrições abaixo:
+
+Titulo = Titulo U
+Descrição = Java
+Concluída = verdadeiro
+
+Titulo = Titulo O
+Descrição = CSharp
+Concluída = falso
+
+Titulo = Titulo P
+Descrição = Firebase
+
+Titulo = Titulo Y
+Descrição = Microsoft
+
+Titulo = Titulo R
+Descrição = Oracle
+Data de Inclusão = data de hoje
+
+
+R: db.materias.insertMany( [
+      { titulo: "titulo U", descricao: "Java", concluida: true },
+      { titulo: "titulo O", descricao: "CSharp", concluida: false},
+      { titulo: "titulo P", descricao: "Firebase"},
+      { titulo: "titulo Y", descricao: "Microsoft"},
+      { titulo: "titulo R", descricao: "Oracle", data_de_inclusao: 09/12/2021},
+   ] );
+   db.materias.find().pretty()
