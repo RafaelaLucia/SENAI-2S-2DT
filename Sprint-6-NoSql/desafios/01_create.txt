@@ -32,6 +32,6 @@ R: db.materias.insertMany( [
       { titulo: "titulo O", descricao: "CSharp", concluida: false},
       { titulo: "titulo P", descricao: "Firebase"},
       { titulo: "titulo Y", descricao: "Microsoft"},
-      { titulo: "titulo R", descricao: "Oracle", data_de_inclusao: 09/12/2021},
+      { titulo: "titulo R", descricao: "Oracle", data_de_inclusao: Date() },
    ] );
    db.materias.find().pretty()

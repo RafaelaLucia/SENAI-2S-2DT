@@ -24,5 +24,5 @@ db.materias.update( {"id" : "" }, { titulo: "titulo Uava", descricao: "Java Best
 db.materias.update( {"id" : "" }, { titulo: "titulo OSharp", descricao: "CShark", concluida: false } )
 db.materias.update( {"id" : "" }, { titulo: "titulo Pirebase", descricao: "Fireb4se"} )
 db.materias.update( {"id" : "" }, { titulo: "titulo YMicrosoft", descricao: "MicroSOFT"} )
-db.materias.update( {"id" : "" }, { titulo: "titulo Roracle", descricao: "Oracle Inc.",  data_de_inclusao: 09/12/2021 } )
+db.materias.update( {"id" : "" }, { titulo: "titulo Roracle", descricao: "Oracle Inc.",  data_de_inclusao: Date() } )
 
