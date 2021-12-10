@@ -1,0 +1,48 @@
+Você receberá um arquivo com o formato CSV contendo alguns personagens de quadrinhos e/ou desenhos animados e você deverá realizar as alterações que foram solicitadas abaixo pelo cliente.
+1.Selecione todos os registros.
+
+  R: db.listaHerois.find().pretty()
+
+2.Selecione apenas o primeiro registro.
+
+  R: db.listaHerois.find({Ordem: 1}).pretty()
+
+3.Selecione todos os registros em que o nome seja igual a ‘Shrek’ ou a quantidade de gatos seja igual a 2.
+
+  R: db.listaHerois.find( { $or: [ { Nome : "Shrek"  }, { Qtd_Gatos: 2 } ] } ).pretty()
+
+4. Selecione todos os registros em que o local de nascimento seja igual a Roma e necessariamente que a quantidade de cachorros seja igual a 3.
+
+  R: db.listaHerois.find({ $and : [{ "Local" : "Roma" }, { "Qtd_Cachorros" : 3 }] }).pretty()
+
+5.Selecione todos os registros em que a quantidade de gatos seja igual a 3 ou a quantidade de cachorros seja igual a 6.
+
+  R: db.listaHerois.find( { $or: [ { Qtd_Gatos : 3  }, { Qtd_Cachorros: 6 } ] } ).pretty()
+
+6.Selecione todos os registros em que o nome comece com C.
+
+  R:  db.listaHerois.find({ Nome : /^c/i }).pretty()
+
+7.Selecione todos os registros em que o nome comece com H.
+
+  R:  db.listaHerois.find({ Nome : /^h/i }).pretty()
+
+8.Selecione todos os registros em que o nome termine com a.
+
+
+
+9.Selecione todos os registros em que o nome contenha s.
+
+  R: db.listaHerois.find({ Nome : /s/i }).pretty()
+
+10.Selecione todos os registros em que o nome contenha ‘e’ ou ‘o’.
+
+  R: db.listaHerois.find({Nome: {$in : [/e/, /o/]} }).pretty()
+
+11.Insira 3 novos super-heróis.
+
+  R: db.listaHerois.find({})
+
+12.	Delete 1 super-herói em que o nome seja igual a Thor.
+13.	Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘0’ para ‘7’.
+14.	Selecione todos os registros que foram trabalhados e exporte para um arquivo JSON.

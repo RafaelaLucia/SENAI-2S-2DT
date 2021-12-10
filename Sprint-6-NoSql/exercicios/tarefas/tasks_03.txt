@@ -1,0 +1,9 @@
+1.	Encontre todos os registros em que tenha como concluído o dia 01.
+
+   
+   db.tarefas.find( {
+   $or: [ { concluida: true }, { dataInclusao: /^01/ } ]
+} )
+
+
+2.	Encontre todos os registros em que tenha como concluído o ano 2018.
