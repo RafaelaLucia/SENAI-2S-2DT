@@ -20,9 +20,13 @@ Data de Inclusão = data de hoje
 
 
 R:
-db.materias.update( {"id" : "" }, { titulo: "titulo Uava", descricao: "Java Best", concluida: true } )
-db.materias.update( {"id" : "" }, { titulo: "titulo OSharp", descricao: "CShark", concluida: false } )
-db.materias.update( {"id" : "" }, { titulo: "titulo Pirebase", descricao: "Fireb4se"} )
-db.materias.update( {"id" : "" }, { titulo: "titulo YMicrosoft", descricao: "MicroSOFT"} )
-db.materias.update( {"id" : "" }, { titulo: "titulo Roracle", descricao: "Oracle Inc.",  data_de_inclusao: Date() } )
+db.materias.update( {"_id" : ObjectId("61b35921baf9463f53f563c4")}, { titulo: "titulo Uava", descricao: "Java Best", concluida: true } )
+
+db.materias.update( { "_id" : ObjectId("61b359babaf9463f53f563c5")}, { titulo: "titulo OSharp", descricao: "CShark", concluida: false } )
+
+db.materias.update( {"_id" : ObjectId("61b359babaf9463f53f563c6")}, { titulo: "titulo Pirebase", descricao: "Fireb4se"} )
+
+db.materias.update( { "_id" : ObjectId("61b35a45baf9463f53f563c7")}, { titulo: "titulo YMicrosoft", descricao: "MicroSOFT"} )
+
+db.materias.update( {"_id" : ObjectId("61b35a5dbaf9463f53f563c8")}, { titulo: "titulo Roracle", descricao: "Oracle Inc.",  data_de_inclusao: Date() } )
 

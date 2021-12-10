@@ -21,10 +21,10 @@ Descrição = Oracle Inc.
 Data de Inclusão = data de hoje
 
 R:
-db.materias.remove({ id: "" })
-db.materias.remove({ id: "" })
+db.materias.remove({   "_id" : ObjectId("61b35921baf9463f53f563c4")})
+db.materias.remove({  "_id" : ObjectId("61b359babaf9463f53f563c5")})
 
-db.materias.remove({ titulo: "Titulo Pirebase" })
+db.materias.remove({ titulo: "titulo Pirebase" })
 
 db.materias.remove({ descricao: "MicroSOFT" })
 db.materias.remove({ descricao: "Oracle Inc." })
