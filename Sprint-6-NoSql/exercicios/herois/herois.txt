@@ -1,4 +1,5 @@
 Você receberá um arquivo com o formato CSV contendo alguns personagens de quadrinhos e/ou desenhos animados e você deverá realizar as alterações que foram solicitadas abaixo pelo cliente.
+
 1.Selecione todos os registros.
 
   R: db.listaHerois.find().pretty()
@@ -29,7 +30,7 @@ Você receberá um arquivo com o formato CSV contendo alguns personagens de quadri
 
 8.Selecione todos os registros em que o nome termine com a.
 
-
+  
 
 9.Selecione todos os registros em que o nome contenha s.
 
@@ -41,8 +42,16 @@ Você receberá um arquivo com o formato CSV contendo alguns personagens de quadri
 
 11.Insira 3 novos super-heróis.
 
-  R: db.listaHerois.find({})
+  R: db.listaHerois.insertMany([{ Ordem: 15, Nome: "BatGirl", Data_Nascimento: new Date(13/12/1961), Local: "Detroit", Qtd_Gatos: 2, Qtd_Cachorros: 2},
+  { Ordem: 16, Nome: "Captain Marvel", Data_Nascimento: new Date(10/12/1960), Local: "EUA", Qtd_Gatos: 9, Qtd_Cachorros: 4},
+  {Ordem: 17, Nome: "SpiderGwen", Data_Nascimento: new Date(04/01/1990), Local: "Suecia", Qtd_Gatos: 10, Qtd_Cachorros: 2}]);
 
-12.	Delete 1 super-herói em que o nome seja igual a Thor.
-13.	Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘0’ para ‘7’.
-14.	Selecione todos os registros que foram trabalhados e exporte para um arquivo JSON.
+12.Delete 1 super-herói em que o nome seja igual a Thor.
+
+  R: db.listaHerois.remove({ "Nome" : "Thor"})
+
+13.Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘0’ para ‘7’.
+
+  R: db.listaHerois.update({ Nome : "Thor" }, { "Ordem" : 13, Nome: "Thor", "Data_Nascimento" : ISODate("1996-08-07T03:00:00Z"), "Local" : "RJ", "Qtd_Gatos" : 7, "Qtd_Cachorros" : 5 })
+
+14.Selecione todos os registros que foram trabalhados e exporte para um arquivo JSON.

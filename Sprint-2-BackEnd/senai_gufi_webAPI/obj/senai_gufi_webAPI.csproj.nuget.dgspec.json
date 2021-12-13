@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj": {}
+    "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj": {
+    "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj",
         "projectName": "senai_gufi_webAPI",
-        "projectPath": "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj",
+        "projectPath": "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\senai_gufi_webAPI.csproj",
         "packagesPath": "C:\\Users\\47499026833\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47499026833\\Downloads\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\obj\\",
+        "outputPath": "C:\\Users\\47499026833\\Desktop\\SENAI-2S-2DT\\Sprint-2-BackEnd\\senai_gufi_webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\47499026833\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -62,6 +62,10 @@
               "target": "Package",
               "version": "[5.0.10, )"
             },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.1, )"
@@ -89,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
