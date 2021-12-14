@@ -6,3 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = senai_gufi_webAPI
+build_property.ProjectDir = C:\Users\Batat\Downloads\SENAI-2S-2DT\Sprint-2-BackEnd\senai_gufi_webAPI\

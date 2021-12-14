@@ -5,8 +5,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>senai_spmedicalgroup_webAPI</ActiveDebugProfile>
-    <Controller_SelectedScaffolderID>MvcControllerEmptyScaffolder</Controller_SelectedScaffolderID>
-    <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
+    <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
+    <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
     <NameOfLastUsedPublishProfile>C:\Users\Batat\Downloads\2DS - SENAI\Trabalhos\SP Medical Group\Backend\senai_spmedicalgroup_webAPI\Properties\PublishProfiles\senai-spmedical-webapi-tarde - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
