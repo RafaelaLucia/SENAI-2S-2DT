@@ -22,20 +22,20 @@ function App() {
         <div className="section-block">
             <div className="block" id="block_itself">
                 <Link to="/CadastroConsulta">
-                <img src={icon1} alt=""/>
+                {/* <img src={icon1} alt=""/> */}
                 <span className="span-clinics">Agendar Consultas</span>
                 </Link>
             </div>
                 <Link to="/listarMeus">
             <div className="block" id="block_itself">
-                <img src={icon2} alt=""/>
+                {/* <img src={icon2} alt=""/> */}
                 <span>Listar Consultas</span>
             </div>
                 </Link>
             <div className="block" id="block_itself">
             <Link to="/cadastrarMapa">
-                <img src={icon3} alt=""/>
-                <span>Cadastrar Localizações</span>
+                <span >Cadastrar Localizações</span>
+                {/* <img src={icon3} alt=""/> */}
                 </Link>
             </div>
         </div>
@@ -48,7 +48,9 @@ function App() {
             <img src={clinica3} alt=""/>
         </div>
         <div>
-            <button className="btn_clinics">Ver Regiões de atendimento</button>
+            <button 
+            className="btn_clinics" 
+            >Ver Regiões de atendimento</button>
         </div>
     </section>
 
