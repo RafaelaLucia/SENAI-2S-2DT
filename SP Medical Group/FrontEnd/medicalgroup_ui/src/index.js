@@ -15,6 +15,7 @@ import Listagem from './pages/Listagem/listagem'
 //Report
 import reportWebVitals from './reportWebVitals';
 import {parseJwt, usuarioLogado } from './services/auth';
+import cadastrarMapa from './pages/mapas/cadastroMapa'
 
 const PermissaoAdm = ({ component: Component }) => (
   <Route
@@ -35,6 +36,7 @@ const routing = (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <PermissaoAdm path="/cadastrarMapa" component={cadastrarMapa} />
         <Route path="/listarMeusADM" component={ADMConsulta} />
         {/* <Route path="/listarMeus" component={MinhasConsultas} />
         <Route path="/listarMeusMedicos" component={MedicosConsulta} /> */}

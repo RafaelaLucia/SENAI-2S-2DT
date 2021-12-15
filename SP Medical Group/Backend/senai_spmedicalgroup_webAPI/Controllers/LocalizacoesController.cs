@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_spmedicalgroup_webAPI.Domains;
 using senai_spmedicalgroup_webAPI.Interfaces;
@@ -33,6 +34,7 @@ namespace senai_spmedicalgroup_webAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "1")]
         public IActionResult Cadastrar(Localizacao novaLocalizacao)
         {
             try
