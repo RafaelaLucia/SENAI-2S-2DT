@@ -10,7 +10,7 @@ export default function ListarMeus(){
     const [ ListarMinhasConsultas, setListarMinhasConsultas ] = useState( [] );
 
     function buscarMinhasConsultas(){
-        axios('http://localhost:5000/api/Consultas', {
+        axios('https://62055c54161670001741ba0a.mockapi.io/Consulta', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }

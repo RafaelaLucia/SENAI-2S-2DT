@@ -9,6 +9,7 @@ import Login from './pages/login/login';
 import NotFound from './pages/notFound/notFound';
 import Cadastro from './pages/CadastrarConsulta/cadastrarConsulta'
 import pacientes from './pages/ListarPacientes/lista.jsx'
+import med from './pages/ListarMed/listaMed.jsx'
 // import MinhasConsultas from './pages/ListarMeus/listarMeus'
 // import MedicosConsulta from './pages/ListarMeusMedicos/listarMeusMedicos'
 import ADMConsulta from './pages/listarMeusADM/listarMeusADM'
@@ -35,7 +36,7 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={pacientes} />
+        <Route exact path="/" component={ADMConsulta} />
         <Route path="/login" component={Login} />
         <PermissaoAdm path="/cadastrarMapa" component={cadastrarMapa} />
         <Route path="/listarMeusADM" component={ADMConsulta} />
