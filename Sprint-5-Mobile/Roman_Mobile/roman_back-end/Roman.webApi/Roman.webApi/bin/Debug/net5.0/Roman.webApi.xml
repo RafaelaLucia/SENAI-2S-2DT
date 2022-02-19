@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Roman.webApi</name>
+    </assembly>
+    <members>
+        <member name="P:Roman.webApi.Controllers.UsuariosController._usuariorepository">
+            <summary>
+            interace que armazena os métodos da usuariorepository
+            </summary>
+        </member>
+        <member name="M:Roman.webApi.Interfaces.IProfessorRepository.CriarProjeto(Roman.webApi.Domains.Projeto,System.Int32)">
+            <summary>
+            Cria novos projetos
+            </summary>
+            <param name="novoprojeto">novo projeto que será criado</param>
+        </member>
+        <member name="M:Roman.webApi.Interfaces.IUsuarioRepository.ListarProjetos">
+            <summary>
+            Exibe uma lista de projetos
+            </summary>
+            <returns>uma lista de projetos</returns>
+        </member>
+        <member name="M:Roman.webApi.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            efetua login
+            </summary>
+            <param name="senha">senha do usuario</param>
+            <param name="email">email do usuario</param>
+            <returns>token com os dados do usuario</returns>
+        </member>
+        <member name="F:Roman.webApi.Repositories.UsuarioRepository.context">
+            <summary>
+            Instância da context contendo os métodos e as funcionalidades do EF CORE
+            </summary>
+        </member>
+    </members>
+</doc>

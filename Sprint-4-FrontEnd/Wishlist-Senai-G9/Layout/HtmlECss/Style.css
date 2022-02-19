@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Radley:ital@1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: normal;
+}
+
+header{
+    height: 100px;
+    background-color: #4868FF;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+}
+
+.ContainerGrid{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+main{
+    margin-top: 100px;
+}
+
+.ContainerHeader{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logotipo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Logotipo img{
+    width: 75px;
+    height: 75px;
+    margin-right: 20px;
+}
+
+.Logotipo span{
+    font-family: 'Radley', serif;
+    font-style: italic;
+    color: white;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.ContainerHeader nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ContainerHeader nav a{
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    text-decoration-line: underline;
+}
+
+.Banner{
+    background: linear-gradient(0deg, rgba(72, 104, 255, 0.1), rgba(72, 104, 255, 0.1)), url(assets_/the-beautiful-shining-stars-in-the-night-sky.jpg);
+    background-size: cover;
+    height: 400px;
+    margin-bottom: 150px;
+}
+
+.ContainerBanner{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+
+.ContainerBanner h1{
+    font-family: 'Radley', serif;
+    font-style: italic;
+    color: white;
+    font-weight: 400;
+    font-size: 100px;
+}
+
+.ContainerBanner span{
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    font-weight: 400;
+    font-size: 35px;
+    width: 320px;
+    text-align: center;
+}
+
+.Cadastro{
+    height: 330px;
+    margin-bottom: 150px;
+}
+
+.ContainerCadastro{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ContainerCadastro h2{
+    color: #282D47;
+    font-size: 60px;
+    text-decoration-line: underline;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+}
+
+.ContainerCadastro form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 230px;
+}
+
+.CamposFormulario{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CampoFormCadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.CampoFormCadastro label{
+    color: #282D47;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+.CampoFormCadastro input{
+    width: 590px;
+    height: 41px;
+    border-radius: 10px;
+    border: 1px solid #282D47;
+    color: #282D47;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.CampoFormCadastro select{
+    width: 590px;
+    height: 41px;
+    border-radius: 10px;
+    border: 1px solid #282D47;
+}
+
+.FormSubmit{
+    padding: 30px;
+    background-color: #3952CC;
+    color: white;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    border: none;
+    border-radius: 20px;
+}
+
+.Lista{
+    margin-bottom: 150px;
+}
+
+.ContainerLista{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.ContainerLista h2{
+    color: #282D47;
+    font-size: 60px;
+    text-decoration-line: underline;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.ContainerLista table{
+    width: 100%;
+    text-align: center;
+    overflow:hidden;
+    border-collapse: collapse;
+    border: 1px solid #282D47;
+    text-align: center;
+}
+
+.ContainerLista th{
+    height: 78px;
+    background-color: #3952CC;
+    text-align: center;
+    padding: 5px;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 50px;
+    width: 600px;
+}
+
+.ContainerLista td{
+    color: #282D47;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #282D47;
+}
+
+footer{
+    background-color: #1B2761;
+    height: 300px;
+}
+
+.ContainerFooter{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
