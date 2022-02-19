@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gufi - Localizações</title>
+    <title>sp - Localizações</title>
     <script
-        src="http://maps.google.com/maps/api/js?sensor=false"
-        type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyNNbqgnOzf2LbjrwUPOKWeemBDatYYzA"
+    type="text/javascript"
     ></script>
+  
 
     <style>
         #map{
@@ -27,7 +28,7 @@
 
     <script>
         fetch('http://localhost:5000/api/localizacoes')
-            .then(resposta => resposta.json())
+        .then(resposta => resposta.json())
             .then(itens => montarMapa(itens))
             .catch(erro => console.log(erro))
 

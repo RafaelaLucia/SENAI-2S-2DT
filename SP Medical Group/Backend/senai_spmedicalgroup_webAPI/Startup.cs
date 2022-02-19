@@ -63,9 +63,10 @@ namespace senai_spmedicalgroup_webAPI
                 options.AddPolicy("CorPolicy",
                                 builder =>
                                 {
-                                    builder.WithOrigins("http://localhost:3000")
-                                    .AllowAnyHeader()
+                                    builder.WithOrigins("*")
+                                   .AllowAnyHeader()
                                     .AllowAnyMethod();
+
                                 });
             });
         }

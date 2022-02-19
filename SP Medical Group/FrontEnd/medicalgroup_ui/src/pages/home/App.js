@@ -14,27 +14,29 @@ function App() {
   return (
     <div>
    <Header/>
-   <section class="banner">
-        <div class="banner-information">
+   <section className="banner">
+        <div className="banner-information">
             <h1>SP Medical Group</h1>
             <h3>Sua Saúde e o que realmente importa</h3>
         </div>
-        <div class="section-block">
-            <div class="block" id="block_itself">
+        <div className="section-block">
+            <div className="block" id="block_itself">
                 <Link to="/CadastroConsulta">
-                <img src={icon1} alt=""/>
+                {/* <img src={icon1} alt=""/> */}
                 <span className="span-clinics">Agendar Consultas</span>
                 </Link>
             </div>
                 <Link to="/listarMeus">
-            <div class="block" id="block_itself">
-                <img src={icon2} alt=""/>
+            <div className="block" id="block_itself">
+                {/* <img src={icon2} alt=""/> */}
                 <span>Listar Consultas</span>
             </div>
                 </Link>
-            <div class="block" id="block_itself">
-                <img src={icon3} alt=""/>
-                <span>Encontre um Médico</span>
+            <div className="block" id="block_itself">
+            <Link to="/cadastrarMapa">
+                <span >Cadastrar Localizações</span>
+                {/* <img src={icon3} alt=""/> */}
+                </Link>
             </div>
         </div>
     </section>
@@ -46,7 +48,9 @@ function App() {
             <img src={clinica3} alt=""/>
         </div>
         <div>
-            <button className="btn_clinics">Ver mais unidades</button>
+            <button 
+            className="btn_clinics" 
+            >Ver Regiões de atendimento</button>
         </div>
     </section>
 
